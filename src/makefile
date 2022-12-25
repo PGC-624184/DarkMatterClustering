@@ -1,6 +1,6 @@
 IDIR =../inc
-CC=gcc
-PROG_NAME = Part_3_FoF
+CC=clang
+PROG_NAME = Friend_of_Friends
 CFLAGS=-I$(IDIR) -Wall -lm -O3
 BDIR = ../bin
 

@@ -1,2 +1,2 @@
 #!/bin/bash
-./Part_3_FoF ../../../data/cosmo.txt
+./Friend_of_Friends ../../../data/cosmo.txt
