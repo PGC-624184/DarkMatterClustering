@@ -5,3 +5,15 @@ Friends of Friends is a piece of cosmological simulation analysis software writt
 The makefile currently exists within the /src folder, until I can figure out how to move it back into the main folder. The data required to run the simulation is not available for public release (from my knowledge).
 
 Enjoy and remember, faster is better in the wild west 🤠
+
+Data is in a .txt file in the following format:
+
+"""
+329072 14285.714
+12.592805  833.43500  309.95242  1.1582964E+08  0
+584.23944  442.12723  102.96899  1.1582964E+08  0
+657.83441  217.12383  530.37024  1.1582964E+08  0
+666.80109  659.12408  794.49884  1.1582964E+08  0
+680.55652  613.83008  1102.3507  1.1582964E+08  0
+692.23657  578.98187  1372.2134  1.1582964E+08  0
+"""
