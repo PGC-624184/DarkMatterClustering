@@ -25,6 +25,7 @@
 #include <periodic_separation.h>
 #include <list_combine.h>
 #include <Nodes.h>
+#include <DM_loop.h>
 
 #define MAX_SEP 5
 
@@ -90,6 +91,8 @@ int main(int argc, char *argv[]) {
         printf("\rComputing Dark Matter groups for particle %d of %d",i+1,n);
         fflush(stdout);
     }
+
+    DM_Loop(List, n, boxSize, MAX_SEP);
 
     printf("\n");
     end = clock();
