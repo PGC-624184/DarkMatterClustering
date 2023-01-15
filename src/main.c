@@ -25,7 +25,7 @@
 #include <periodic_separation.h>
 #include <list_combine.h>
 #include <Nodes.h>
-#include <DM_loop.h>
+#include <DM_Loop.h>
 
 #define MAX_SEP 5
 
@@ -76,8 +76,9 @@ int main(int argc, char *argv[]) {
     double cpu_time_used;
 
     start = clock();
+
     // I hate this section of code. ~O(n^2)
-    for (i=0;i<n-1;i++) { //loop through particles
+    /*for (i=0;i<n-1;i++) { //loop through particles
         if (List[i].type==1){ //only do more if DM
             for (j=i+1;j<n;j++) { // loop through remaining particles
                 if (List[j].type==1) { //
@@ -91,6 +92,7 @@ int main(int argc, char *argv[]) {
         printf("\rComputing Dark Matter groups for particle %d of %d",i+1,n);
         fflush(stdout);
     }
+    */
 
     DM_Loop(List, n, boxSize, MAX_SEP);
 
@@ -98,7 +100,7 @@ int main(int argc, char *argv[]) {
     end = clock();
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
     printf("The Dark Matter calculation takes %f seconds\n",cpu_time_used );
-
+    return 0;
     int numDM = 0;
     int numGas = 0;
     int numBH = 0;
