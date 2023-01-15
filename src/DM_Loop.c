@@ -8,7 +8,7 @@
 #include <DM_loop.h>
 
 
-void DM_Loop(struct liststruct *a, int n, float boxSize, int MAX_SEP) {
+void DM_loop(struct liststruct *a, int n, float boxSize, int MAX_SEP) {
     int j;
     int i;
     float sep;

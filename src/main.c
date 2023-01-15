@@ -25,7 +25,7 @@
 #include <periodic_separation.h>
 #include <list_combine.h>
 #include <Nodes.h>
-#include <DM_Loop.h>
+#include <DM_loop.h>
 
 #define MAX_SEP 5
 
@@ -94,7 +94,7 @@ int main(int argc, char *argv[]) {
     }
     */
 
-    DM_Loop(List, n, boxSize, MAX_SEP);
+    DM_loop(List, n, boxSize, MAX_SEP);
 
     printf("\n");
     end = clock();
