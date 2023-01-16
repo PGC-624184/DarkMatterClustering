@@ -34,7 +34,8 @@ int main(int argc, char *argv[]) {
 
     int i,j;
     int n;
-    float sep, boxSize;
+    float boxSize;
+    //float sep;
     char fname[1024];
     FILE *fp;
 

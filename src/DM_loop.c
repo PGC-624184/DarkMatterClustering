@@ -28,4 +28,5 @@ void DM_loop(struct liststruct *a, int n, float boxSize, int MAX_SEP) {
         printf("\rComputing Dark Matter groups for particle %d of %d",i+1,n);
         fflush(stdout);
     }
+    return;
 }
