@@ -8,7 +8,11 @@ int read_data_n(FILE *fp, float *boxSize) {
     char buf[1024];
     int n;
     
-    fgets(buf, sizeof buf, fp);
+    if (fgets(buf, sizeof buf, fp) == NULL) {
+        printf("Error: There was a problem reading the file.");
+        return -1;
+    }
+    (void)*fgets(buf, sizeof buf, fp); // Cast to void to avoid return value warning
     sscanf(buf,"%d %g",&n, boxSize);
 
     return n;

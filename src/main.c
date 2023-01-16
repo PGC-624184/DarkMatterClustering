@@ -24,7 +24,6 @@
 #include <read_data.h>
 #include <periodic_separation.h>
 #include <list_combine.h>
-#include <Nodes.h>
 
 #define MAX_SEP 5
 
