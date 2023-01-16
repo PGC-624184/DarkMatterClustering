@@ -75,7 +75,11 @@ int main(int argc, char *argv[]) {
     List = (struct liststruct *) malloc(n * sizeof(*List));
 
     
+    // closing files and freeing List
     if (List == NULL) {
+        printf("Error: ould not creat List. Exiting.");
+        close(fp);
+        free(List);
         return -2;
     }
 
@@ -154,7 +158,7 @@ int main(int argc, char *argv[]) {
     */
    
     for (i=0;i<n;i++) { // loop through all particles
-        int bestindex;
+        int bestindex = 0;
         float dist[2]={boxSize,boxSize};
         if (List[i].type !=1 ) { // baryons only in calc
             for (j=0;j<n;j++) { // loop through all particles
@@ -192,8 +196,8 @@ int main(int argc, char *argv[]) {
     /* Part 4 */
     /* Do some analysis on each group */
 
-    // There's something wrong down here with the logic around large groups
     
+    // Below arrays do not have an initialisation value, giving error in Infer
     float Mass[count];
     // All Gas and DM particles have the same mass
     float Gas[count];
@@ -201,6 +205,8 @@ int main(int argc, char *argv[]) {
     // stars, BH particles have different masses
     float Star[count];
     float BH[count];
+
+
     // allocate for largest mass
     float bigMass=0.0;
     struct liststruct *l;
@@ -208,8 +214,10 @@ int main(int argc, char *argv[]) {
     int massive_count=0;
 
     int p;
+
+    // Error in below due to error in lines 201 -> 207
     for(p=0;p<count;p++) { // loop over unique groups
-        for(Mass[p]=0.0,l=Start[p]; l != NULL; l = l->next) {
+        for(Mass[p]=0;l=Start[p]; l != NULL; l = l->next) {
             Mass[p] += l->m;
             if (l->type==0) {
                 Gas[p]+=l->m;
@@ -239,8 +247,15 @@ int main(int argc, char *argv[]) {
     char outfile[30] = "analysis.csv";
     FILE *f = fopen(outfile, "w");
 
+    // check if file ptr exists
+    if (f == NULL) {
+        printf("Error: Failed to open file");
+        return -4;
+    }
+
     // file header
     fprintf(f,"Total_Mass, Gas_Mass, DM_Mass, Star_Mass, BH_Mass\n");
+    
     // write results to file 
     for(i=0;i<count;i++) {
       if (Star[i]>=MassLimit) {

@@ -1,145 +1,143 @@
 #0
-test_main.c:243: error: Null Dereference
-  pointer `f` last assigned on line 240 could be null and is dereferenced by call to `fprintf()` at line 243, column 5.
-  241. 
-  242.     // file header
-  243.     fprintf(f,"Total_Mass, Gas_Mass, DM_Mass, Star_Mass, BH_Mass\n");
-           ^
-  244.     // write results to file 
-  245.     for(i=0;i<count;i++) {
+test_main.c:228: error: Uninitialized Value
+  The value read from BH[_] was never initialized.
+  226.             };
+  227.             if (l->type==5) {
+  228.                 BH[p]+=l->m;
+                       ^
+  229.             };
+  230.         }
 
 #1
-test_main.c:79: error: Resource Leak
-  resource of type `_IO_FILE` acquired to `return` by call to `fopen()` at line 65, column 15 is not released after line 79, column 9.
-  77.     
-  78.     if (List == NULL) {
-  79.         return -2;
-              ^
-  80.     }
-  81. 
+test_main.c:258: error: Uninitialized Value
+  The value read from BH[_] was never initialized.
+  256.       if (Star[i]>=MassLimit) {
+  257.         // Write masses to file
+  258.         fprintf(f,"%g, %g, %g, %g, %g\n",log10(Mass[i]),log10(Gas[i]),log10(DM[i]),log10(Star[i]),log10(BH[i]));
+                                                                                                         ^
+  259.         //printf("%d\n",i);
+  260.       }
 
 #2
-test_main.c:224: error: Uninitialized Value
-  The value read from BH[_] was never initialized.
-  222.             };
-  223.             if (l->type==5) {
-  224.                 BH[p]+=l->m;
+test_main.c:222: error: Uninitialized Value
+  The value read from DM[_] was never initialized.
+  220.             };
+  221.             if (l->type==1) {
+  222.                 DM[p]+=l->m;
                        ^
-  225.             };
-  226.         }
+  223.             };
+  224.             if (l->type==4) {
 
 #3
-test_main.c:248: error: Uninitialized Value
-  The value read from BH[_] was never initialized.
-  246.       if (Star[i]>=MassLimit) {
-  247.         // Write masses to file
-  248.         fprintf(f,"%g, %g, %g, %g, %g\n",log10(Mass[i]),log10(Gas[i]),log10(DM[i]),log10(Star[i]),log10(BH[i]));
-                                                                                                         ^
-  249.         //printf("%d\n",i);
-  250.       }
+test_main.c:258: error: Uninitialized Value
+  The value read from DM[_] was never initialized.
+  256.       if (Star[i]>=MassLimit) {
+  257.         // Write masses to file
+  258.         fprintf(f,"%g, %g, %g, %g, %g\n",log10(Mass[i]),log10(Gas[i]),log10(DM[i]),log10(Star[i]),log10(BH[i]));
+                                                                             ^
+  259.         //printf("%d\n",i);
+  260.       }
 
 #4
-test_main.c:218: error: Uninitialized Value
-  The value read from DM[_] was never initialized.
-  216.             };
-  217.             if (l->type==1) {
-  218.                 DM[p]+=l->m;
+test_main.c:219: error: Uninitialized Value
+  The value read from Gas[_] was never initialized.
+  217.             Mass[p] += l->m;
+  218.             if (l->type==0) {
+  219.                 Gas[p]+=l->m;
                        ^
-  219.             };
-  220.             if (l->type==4) {
+  220.             };
+  221.             if (l->type==1) {
 
 #5
-test_main.c:248: error: Uninitialized Value
-  The value read from DM[_] was never initialized.
-  246.       if (Star[i]>=MassLimit) {
-  247.         // Write masses to file
-  248.         fprintf(f,"%g, %g, %g, %g, %g\n",log10(Mass[i]),log10(Gas[i]),log10(DM[i]),log10(Star[i]),log10(BH[i]));
-                                                                             ^
-  249.         //printf("%d\n",i);
-  250.       }
+test_main.c:258: error: Uninitialized Value
+  The value read from Gas[_] was never initialized.
+  256.       if (Star[i]>=MassLimit) {
+  257.         // Write masses to file
+  258.         fprintf(f,"%g, %g, %g, %g, %g\n",log10(Mass[i]),log10(Gas[i]),log10(DM[i]),log10(Star[i]),log10(BH[i]));
+                                                               ^
+  259.         //printf("%d\n",i);
+  260.       }
 
 #6
-test_main.c:215: error: Uninitialized Value
-  The value read from Gas[_] was never initialized.
-  213.             Mass[p] += l->m;
-  214.             if (l->type==0) {
-  215.                 Gas[p]+=l->m;
-                       ^
-  216.             };
-  217.             if (l->type==1) {
+test_main.c:217: error: Uninitialized Value
+  The value read from Mass[_] was never initialized.
+  215.     for(p=0;p<count;p++) { // loop over unique groups
+  216.         for(l=Start[p]; l != NULL; l = l->next) {
+  217.             Mass[p] += l->m;
+                   ^
+  218.             if (l->type==0) {
+  219.                 Gas[p]+=l->m;
 
 #7
-test_main.c:248: error: Uninitialized Value
-  The value read from Gas[_] was never initialized.
-  246.       if (Star[i]>=MassLimit) {
-  247.         // Write masses to file
-  248.         fprintf(f,"%g, %g, %g, %g, %g\n",log10(Mass[i]),log10(Gas[i]),log10(DM[i]),log10(Star[i]),log10(BH[i]));
-                                                               ^
-  249.         //printf("%d\n",i);
-  250.       }
+test_main.c:231: error: Uninitialized Value
+  The value read from Mass[_] was never initialized.
+  229.             };
+  230.         }
+  231.         if (Mass[p] > bigMass) {
+                   ^
+  232.             bigMass = Mass[p];
+  233.         }
 
 #8
-test_main.c:248: error: Uninitialized Value
+test_main.c:232: error: Uninitialized Value
   The value read from Mass[_] was never initialized.
-  246.       if (Star[i]>=MassLimit) {
-  247.         // Write masses to file
-  248.         fprintf(f,"%g, %g, %g, %g, %g\n",log10(Mass[i]),log10(Gas[i]),log10(DM[i]),log10(Star[i]),log10(BH[i]));
-                                                ^
-  249.         //printf("%d\n",i);
-  250.       }
+  230.         }
+  231.         if (Mass[p] > bigMass) {
+  232.             bigMass = Mass[p];
+                   ^
+  233.         }
+  234.         if (Star[p]>MassLimit) {
 
 #9
-test_main.c:221: error: Uninitialized Value
-  The value read from Star[_] was never initialized.
-  219.             };
-  220.             if (l->type==4) {
-  221.                 Star[p]+=l->m;
-                       ^
-  222.             };
-  223.             if (l->type==5) {
+test_main.c:258: error: Uninitialized Value
+  The value read from Mass[_] was never initialized.
+  256.       if (Star[i]>=MassLimit) {
+  257.         // Write masses to file
+  258.         fprintf(f,"%g, %g, %g, %g, %g\n",log10(Mass[i]),log10(Gas[i]),log10(DM[i]),log10(Star[i]),log10(BH[i]));
+                                                ^
+  259.         //printf("%d\n",i);
+  260.       }
 
 #10
-test_main.c:230: error: Uninitialized Value
+test_main.c:225: error: Uninitialized Value
   The value read from Star[_] was never initialized.
-  228.             bigMass = Mass[p];
-  229.         }
-  230.         if (Star[p]>MassLimit) {
-                   ^
-  231.             massive_count+=1;
-  232.         }
+  223.             };
+  224.             if (l->type==4) {
+  225.                 Star[p]+=l->m;
+                       ^
+  226.             };
+  227.             if (l->type==5) {
 
 #11
-test_main.c:246: error: Uninitialized Value
+test_main.c:234: error: Uninitialized Value
   The value read from Star[_] was never initialized.
-  244.     // write results to file 
-  245.     for(i=0;i<count;i++) {
-  246.       if (Star[i]>=MassLimit) {
-                 ^
-  247.         // Write masses to file
-  248.         fprintf(f,"%g, %g, %g, %g, %g\n",log10(Mass[i]),log10(Gas[i]),log10(DM[i]),log10(Star[i]),log10(BH[i]));
+  232.             bigMass = Mass[p];
+  233.         }
+  234.         if (Star[p]>MassLimit) {
+                   ^
+  235.             massive_count+=1;
+  236.         }
 
 #12
-test_main.c:248: error: Uninitialized Value
+test_main.c:256: error: Uninitialized Value
   The value read from Star[_] was never initialized.
-  246.       if (Star[i]>=MassLimit) {
-  247.         // Write masses to file
-  248.         fprintf(f,"%g, %g, %g, %g, %g\n",log10(Mass[i]),log10(Gas[i]),log10(DM[i]),log10(Star[i]),log10(BH[i]));
-                                                                                          ^
-  249.         //printf("%d\n",i);
-  250.       }
+  254.     // write results to file 
+  255.     for(i=0;i<count;i++) {
+  256.       if (Star[i]>=MassLimit) {
+                 ^
+  257.         // Write masses to file
+  258.         fprintf(f,"%g, %g, %g, %g, %g\n",log10(Mass[i]),log10(Gas[i]),log10(DM[i]),log10(Star[i]),log10(BH[i]));
 
 #13
-test_main.c:169: error: Uninitialized Value
-  The value read from bestindex was never initialized.
-  167.                 }
-  168.             }
-  169.         list_combine(List,i,bestindex); // combine to group
-               ^
-  170.         }
-  171.         printf("\rComputing closest DM for particle %d of %d",i+1,n);
+test_main.c:258: error: Uninitialized Value
+  The value read from Star[_] was never initialized.
+  256.       if (Star[i]>=MassLimit) {
+  257.         // Write masses to file
+  258.         fprintf(f,"%g, %g, %g, %g, %g\n",log10(Mass[i]),log10(Gas[i]),log10(DM[i]),log10(Star[i]),log10(BH[i]));
+                                                                                          ^
+  259.         //printf("%d\n",i);
+  260.       }
 
 Found 14 issues
                 Issue Type(ISSUED_TYPE_ID): #
-  Uninitialized Value(UNINITIALIZED_VALUE): 12
-              Resource Leak(RESOURCE_LEAK): 1
-        Null Dereference(NULL_DEREFERENCE): 1
+  Uninitialized Value(UNINITIALIZED_VALUE): 14
