@@ -1,5 +1,5 @@
 IDIR =../inc
-CC=gcc-12
+CC=gcc
 PROG_NAME = Friend_of_Friends
 CFLAGS=-I$(IDIR) -Wall -lm -O3 -fopenmp
 BDIR = ../bin
