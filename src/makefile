@@ -7,10 +7,10 @@ BDIR = ../bin
 ODIR=../obj
 LDIR=../lib
 
-_DEPS = read_data_n.h read_data.h definitions.h periodic_separation.h Nodes.h list_combine.h DM_loop.h
+_DEPS = read_data_n.h read_data.h definitions.h periodic_separation.h Nodes.h list_combine.h 
 DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
 
-_OBJ = read_data_n.o main.o read_data.o periodic_separation.o list_combine.o Nodes.o DM_loop.o
+_OBJ = read_data_n.o main.o read_data.o periodic_separation.o list_combine.o Nodes.o
 OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 
 $(ODIR)/%.o: %.c $(DEPS)

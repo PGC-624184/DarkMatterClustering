@@ -25,7 +25,6 @@
 #include <periodic_separation.h>
 #include <list_combine.h>
 #include <Nodes.h>
-#include <DM_loop.h>
 
 #define MAX_SEP 5
 
@@ -78,8 +77,11 @@ int main(int argc, char *argv[]) {
     start = clock();
 
     // I hate this section of code. ~O(n^2)
-    /*for (i=0;i<n-1;i++) { //loop through particles
+    
+    /* #pragma omp parallel for */
+    for (i=0;i<n-1;i++) { //loop through particles
         if (List[i].type==1){ //only do more if DM
+            #pragma omp parallel for // Run parallel loop here bc previous loop is just a select loop.
             for (j=i+1;j<n;j++) { // loop through remaining particles
                 if (List[j].type==1) { //
                     sep = periodic_separation(&List[i],&List[j],boxSize,3);
@@ -92,15 +94,15 @@ int main(int argc, char *argv[]) {
         printf("\rComputing Dark Matter groups for particle %d of %d",i+1,n);
         fflush(stdout);
     }
-    */
-
-    DM_loop(List, n, boxSize, MAX_SEP);
 
     printf("\n");
     end = clock();
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
     printf("The Dark Matter calculation takes %f seconds\n",cpu_time_used );
     return 0;
+
+}
+ /*
     int numDM = 0;
     int numGas = 0;
     int numBH = 0;
@@ -123,18 +125,19 @@ int main(int argc, char *argv[]) {
     printf("There are %d Dark Matter Particles\n",numDM);
     printf("There are %d Star Particles\n",numStar);
     printf("There are %d Black Hole Particles\n",numBH);
-
+*/
     /* Part 3 */
     /* Add baryons to group of nearest DM part */
     /* Hint -- similar to above but one loop for baryons,
        one loop for DM.
        Hint -- when should you call list_combine now?
     */
-    start = clock();
+    //start = clock();
     /*
     I hate this section of code. Tried to implement kd tree above but fell back
     to this as I know it works and gives the answer.
     */
+   /*
     for (i=0;i<n;i++) { // loop through all particles
         int bestindex;
         float dist[2]={boxSize,boxSize};
@@ -170,10 +173,10 @@ int main(int argc, char *argv[]) {
     end = clock();
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
     printf("The Baryon calculation takes %f seconds\n",cpu_time_used );
-
+    */
     /* Part 4 */
     /* Do some analysis on each group */
-
+    /*
     float Mass[count];
     // All Gas and DM particles have the same mass
     float Gas[count];
@@ -212,10 +215,11 @@ int main(int argc, char *argv[]) {
         }
     }
     printf("Found %d massive groups. Largest group was %g\n",massive_count,bigMass);
-
+    */
 
     /* Part 4 */
     /* Open file and write data*/
+    /*
     char outfile[30] = "analysis.csv";
     FILE *f = fopen(outfile, "w");
     fprintf(f,"Total_Mass, Gas_Mass, DM_Mass, Star_Mass, BH_Mass\n");
@@ -234,3 +238,4 @@ int main(int argc, char *argv[]) {
 
     return 0;
 };
+*/
