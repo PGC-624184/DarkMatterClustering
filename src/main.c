@@ -137,6 +137,9 @@ int main(int argc, char *argv[]) {
 
 }
  /*
+
+}
+ /*
     int numDM = 0;
     int numGas = 0;
     int numBH = 0;
