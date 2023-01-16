@@ -86,7 +86,7 @@ int main(int argc, char *argv[]) {
     // I hate this section of code. ~O(n^2)
     
     //#pragma omp parallel for
-    for (i=0;i<n-1;i++) { //loop through particles
+    for (i=0;i<n;i++) { //loop through particles
         if (List[i].type==1){ //only do more if DM
             //#pragma omp parallel for // Run parallel loop here bc previous loop is just a select loop.
             for (j=i+1;j<n;j++) { // loop through remaining particles
@@ -105,19 +105,13 @@ int main(int argc, char *argv[]) {
     printf("\n");
     end = clock();
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
-    printf("The Dark Matter calculation takes %f seconds\n",cpu_time_used );
+    printf("The Dark Matter calculation takes %0.2f seconds\n",cpu_time_used );
     
-    return 0;
-
-}
- /*
-
-}
- 
     int numDM = 0;
     int numGas = 0;
     int numBH = 0;
     int numStar = 0;
+
     for (i=0;i<n;i++) {
       if (List[i].type==1) {
         numDM +=1;
@@ -136,33 +130,32 @@ int main(int argc, char *argv[]) {
     printf("There are %d Dark Matter Particles\n",numDM);
     printf("There are %d Star Particles\n",numStar);
     printf("There are %d Black Hole Particles\n",numBH);
-*/
+
     /* Part 3 */
     /* Add baryons to group of nearest DM part */
     /* Hint -- similar to above but one loop for baryons,
        one loop for DM.
        Hint -- when should you call list_combine now?
     */
-    //start = clock();
+    start = clock();
     /*
-    I hate this section of code. Tried to implement kd tree above but fell back
-    to this as I know it works and gives the answer.
+    This is another candidate area to implement a Ball Tree  - which will deal with periodic boundary conditions
     */
-   /*
+   
     for (i=0;i<n;i++) { // loop through all particles
         int bestindex;
         float dist[2]={boxSize,boxSize};
-        if (List[i].type !=1 ) {
-            for (j=0;j<n;j++) {
-                if (List[j].type==1) {
-                    dist[1] = periodic_separation(&List[i],&List[j],boxSize,3);
+        if (List[i].type !=1 ) { // baryons only in calc
+            for (j=0;j<n;j++) { // loop through all particles
+                if (List[j].type==1) { // select DM particles
+                    dist[1] = periodic_separation(&List[i],&List[j],boxSize,3); // calc dist
                     if (dist[1]<dist[0]){ // update closest distance index
                         bestindex = j; // get closest match index
                         dist[0] = dist[1]; // update dist
                     }
                 }
             }
-        list_combine(List,i,bestindex);
+        list_combine(List,i,bestindex); // combine to group
         }
         printf("\rComputing closest DM for particle %d of %d",i+1,n);
         fflush(stdout);
@@ -173,7 +166,7 @@ int main(int argc, char *argv[]) {
         printf("Couldn't allocate memory for Start array\n");
         return -3;
     }
-
+    // Calculate the number of groups
     int count = 0;
     for(i=0; i<n; i++) {
         if(List[i].prev == NULL && List[i].next != NULL) {
@@ -183,11 +176,13 @@ int main(int argc, char *argv[]) {
     printf("\nThere are %d groups.\n",count);
     end = clock();
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
-    printf("The Baryon calculation takes %f seconds\n",cpu_time_used );
-    */
+    printf("The Baryon calculation takes %0.2f seconds\n",cpu_time_used );
+
     /* Part 4 */
     /* Do some analysis on each group */
-    /*
+
+    // There's something wrong down here with the logic around large groups
+    
     float Mass[count];
     // All Gas and DM particles have the same mass
     float Gas[count];
@@ -202,8 +197,8 @@ int main(int argc, char *argv[]) {
     int massive_count=0;
 
     int p;
-    for(p=0;p<count;p++) {
-        for(Mass[p]=0,l=Start[p]; l != NULL; l = l->next) {
+    for(p=0;p<count;p++) { // loop over unique groups
+        for(Mass[p]=0.0,l=Start[p]; l != NULL; l = l->next) {
             Mass[p] += l->m;
             if (l->type==0) {
                 Gas[p]+=l->m;
@@ -225,15 +220,17 @@ int main(int argc, char *argv[]) {
             massive_count+=1;
         }
     }
+    // on screen display of results of massive groups
     printf("Found %d massive groups. Largest group was %g\n",massive_count,bigMass);
-    */
+    
 
-    /* Part 4 */
     /* Open file and write data*/
-    /*
     char outfile[30] = "analysis.csv";
     FILE *f = fopen(outfile, "w");
+
+    // file header
     fprintf(f,"Total_Mass, Gas_Mass, DM_Mass, Star_Mass, BH_Mass\n");
+    // write results to file 
     for(i=0;i<count;i++) {
       if (Star[i]>=MassLimit) {
         // Write masses to file
@@ -243,10 +240,9 @@ int main(int argc, char *argv[]) {
     }
     fclose(f);
 
-    //clean up
+    //clean up memory
     free(Start);
     free(List);
 
     return 0;
 };
-*/
