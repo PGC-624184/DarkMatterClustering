@@ -79,6 +79,7 @@ int main(int argc, char *argv[]) {
     
     clock_t start, end;
     double cpu_time_used;
+    float MAX_SEP2 = MAX_SEP*MAX_SEP;
 
     start = clock();
     
@@ -91,7 +92,7 @@ int main(int argc, char *argv[]) {
             for (j=i+1;j<n;j++) { // loop through remaining particles
                 if (List[j].type==1) { //
                     sep = periodic_separation(&List[i],&List[j],boxSize,3);
-                    if (sep <= MAX_SEP) {
+                    if (sep <= MAX_SEP2) {
                         list_combine(List,i,j);
                     }
                 }
@@ -105,33 +106,6 @@ int main(int argc, char *argv[]) {
     end = clock();
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
     printf("The Dark Matter calculation takes %f seconds\n",cpu_time_used );
-
-
-    start = clock();
-    
-    // I hate this section of code. ~O(n^2)
-    
-    //#pragma omp parallel for
-    for (i=0;i<n-1;i++) { //loop through particles
-        if (List[i].type==1){ //only do more if DM
-            //#pragma omp parallel for // Run parallel loop here bc previous loop is just a select loop.
-            for (j=i+1;j<n;j++) { // loop through remaining particles
-                if (List[j].type==1) { //
-                    sep = periodic_separation(&List[i],&List[j],boxSize,3);
-                    if (sep <= MAX_SEP) {
-                        list_combine(List,i,j);
-                    }
-                }
-            }
-        }
-        printf("\rComputing Dark Matter groups for particle %d of %d",i+1,n);
-        fflush(stdout);
-    }
-
-    printf("\n");
-    end = clock();
-    cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
-    printf("The Parallel Dark Matter calculation takes %f seconds\n",cpu_time_used );
     
     return 0;
 
@@ -139,7 +113,7 @@ int main(int argc, char *argv[]) {
  /*
 
 }
- /*
+ 
     int numDM = 0;
     int numGas = 0;
     int numBH = 0;
