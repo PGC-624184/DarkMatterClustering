@@ -13,8 +13,10 @@
 #include <string.h>
 #include <math.h>
 #include <time.h>
+#include <omp.h>
 
 /* Structures */
+struct liststruct *List;
 
 /* Prototypes */
 
@@ -25,6 +27,7 @@
 #include <periodic_separation.h>
 #include <list_combine.h>
 
+
 #define MAX_SEP 5
 
 /* main program */
@@ -32,10 +35,11 @@ int main(int argc, char *argv[]) {
 
     int i,j;
     int n;
-    float sep, boxSize;
+    float boxSize;
+    float sep;
     char fname[1024];
     FILE *fp;
-
+    
     /* parse arguments */
     if (argc != 2)
         return -1;
@@ -57,30 +61,33 @@ int main(int argc, char *argv[]) {
     printf("The box size is is %f\n", boxSize);
 
     // Allocate for data
-    List = (struct liststruct *) malloc(n * sizeof(struct liststruct));
+    List = (struct liststruct *) malloc(n * sizeof(*List));
 
-    if (List == NULL)
+    
+    if (List == NULL) {
         return -2;
+    }
 
     // read the data
     read_data(fp,List,n);
-
+    
     /* Part 2 */
     /* get separation of each DM pair and form groups */
     /* Hint -- only need to include DM particles in these loops */
 
     // Timing calls
+    
     clock_t start, end;
     double cpu_time_used;
 
     start = clock();
-
+    
     // I hate this section of code. ~O(n^2)
     
-    /* #pragma omp parallel for */
+    //#pragma omp parallel for
     for (i=0;i<n-1;i++) { //loop through particles
         if (List[i].type==1){ //only do more if DM
-            #pragma omp parallel for // Run parallel loop here bc previous loop is just a select loop.
+            //#pragma omp parallel for // Run parallel loop here bc previous loop is just a select loop.
             for (j=i+1;j<n;j++) { // loop through remaining particles
                 if (List[j].type==1) { //
                     sep = periodic_separation(&List[i],&List[j],boxSize,3);
@@ -98,6 +105,34 @@ int main(int argc, char *argv[]) {
     end = clock();
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
     printf("The Dark Matter calculation takes %f seconds\n",cpu_time_used );
+
+
+    start = clock();
+    
+    // I hate this section of code. ~O(n^2)
+    
+    //#pragma omp parallel for
+    for (i=0;i<n-1;i++) { //loop through particles
+        if (List[i].type==1){ //only do more if DM
+            //#pragma omp parallel for // Run parallel loop here bc previous loop is just a select loop.
+            for (j=i+1;j<n;j++) { // loop through remaining particles
+                if (List[j].type==1) { //
+                    sep = periodic_separation(&List[i],&List[j],boxSize,3);
+                    if (sep <= MAX_SEP) {
+                        list_combine(List,i,j);
+                    }
+                }
+            }
+        }
+        printf("\rComputing Dark Matter groups for particle %d of %d",i+1,n);
+        fflush(stdout);
+    }
+
+    printf("\n");
+    end = clock();
+    cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
+    printf("The Parallel Dark Matter calculation takes %f seconds\n",cpu_time_used );
+    
     return 0;
 
 }
