@@ -196,7 +196,7 @@ int main(int argc, char *argv[]) {
     /* Part 4 */
     /* Do some analysis on each group */
 
-    
+    printf("The below arrays have size %d", count);    
     // Below arrays do not have an initialisation value, giving error in Infer
     float Mass[count];
     // All Gas and DM particles have the same mass
@@ -213,11 +213,10 @@ int main(int argc, char *argv[]) {
     float MassLimit = pow(10,9);
     int massive_count=0;
 
+    // Error from uninitialised values above
     int p;
-
-    // Error in below due to error in lines 201 -> 207
     for(p=0;p<count;p++) { // loop over unique groups
-        for(Mass[p]=0;l=Start[p]; l != NULL; l = l->next) {
+        for(Mass[p]=0.0,l=Start[p]; l != NULL; l = l->next) {
             Mass[p] += l->m;
             if (l->type==0) {
                 Gas[p]+=l->m;
