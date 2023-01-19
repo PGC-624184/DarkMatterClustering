@@ -16,16 +16,27 @@
 #include <omp.h>
 
 /* Structures */
-struct liststruct *List;
+struct liststruct {
+    float p[3];
+    float m;
+    int type;
+    int group;
+    struct liststruct *next;
+    struct liststruct *prev;
+} *List;
 
 /* Prototypes */
+int read_data_n(FILE *fp, float *boxSize); 
+void read_data(FILE *fp, struct liststruct *L, int n);
+float periodic_separation(struct liststruct *a, struct liststruct *b, float boxSize, int dim);
+void list_combine(struct liststruct *L, long i, long j);
 
 /* Moved functions and structs into cleaner structure */
-#include <definitions.h>
-#include <read_data_n.h>
-#include <read_data.h>
-#include <periodic_separation.h>
-#include <list_combine.h>
+//#include <definitions.h>
+//#include <read_data_n.h>
+//#include <read_data.h>
+//#include <periodic_separation.h>
+//#include <list_combine.h>
 
 
 #define MAX_SEP 5
@@ -63,10 +74,11 @@ int main(int argc, char *argv[]) {
     // Allocate for data
     List = (struct liststruct *) malloc(n * sizeof(*List));
 
-   // closing files and freeing List
+    
+    // closing files and freeing List
     if (List == NULL) {
         printf("Error: ould not creat List. Exiting.");
-        fclose(fp);
+        close(fp);
         free(List);
         return -2;
     }
@@ -184,18 +196,16 @@ int main(int argc, char *argv[]) {
     /* Part 4 */
     /* Do some analysis on each group */
 
-    float *Mass; //  Allocate pointer
-    Mass = (float *)malloc(count * sizeof(float)); // create memory for the array
+    printf("The below arrays have size %d", count);    
+    // Below arrays do not have an initialisation value, giving error in Infer
+    float *Mass[count] = (float *)malloc(count * sizeof(float));
     // All Gas and DM particles have the same mass
-    float *Gas;
-    Gas = (float *)malloc(count * sizeof(float));
-    float *DM;
-    DM = (float *)malloc(count * sizeof(float));
+    float Gas[count];
+    float DM[count];
     // stars, BH particles have different masses
-    float *Star;
-    Star = (float *)malloc(count * sizeof(float));
-    float *BH;
-    BH = (float *)malloc(count * sizeof(float));
+    float Star[count];
+    float BH[count];
+
 
     // allocate for largest mass
     float bigMass=0.0;
@@ -203,6 +213,7 @@ int main(int argc, char *argv[]) {
     float MassLimit = pow(10,9);
     int massive_count=0;
 
+    // Error from uninitialised values above
     int p;
     for(p=0;p<count;p++) { // loop over unique groups
         for(Mass[p]=0.0,l=Start[p]; l != NULL; l = l->next) {
@@ -235,13 +246,13 @@ int main(int argc, char *argv[]) {
     char outfile[30] = "analysis.csv";
     FILE *f = fopen(outfile, "w");
 
-    // check if analysis file ptr exists
+    // check if file ptr exists
     if (f == NULL) {
         printf("Error: Failed to open file");
         return -4;
     }
 
-    // analysis file header
+    // file header
     fprintf(f,"Total_Mass, Gas_Mass, DM_Mass, Star_Mass, BH_Mass\n");
     
     // write results to file 
@@ -249,10 +260,9 @@ int main(int argc, char *argv[]) {
       if (Star[i]>=MassLimit) {
         // Write masses to file
         fprintf(f,"%g, %g, %g, %g, %g\n",log10(Mass[i]),log10(Gas[i]),log10(DM[i]),log10(Star[i]),log10(BH[i]));
+        //printf("%d\n",i);
       }
-    };
-
-    //close analysis file 
+    }
     fclose(f);
 
     //clean up memory
@@ -260,4 +270,91 @@ int main(int argc, char *argv[]) {
     free(List);
 
     return 0;
+};
+
+
+int read_data_n(FILE *fp, float *boxSize) {
+
+    char buf[1024];
+    int n;
+    
+    (void)*fgets(buf, sizeof buf, fp); // Cast to void to avoid return value warning
+    sscanf(buf,"%d %g",&n, boxSize);
+    return n;
+};
+
+
+void read_data(FILE *fp, struct liststruct *L, int n) {
+
+    int i;
+    char buf[1024];
+
+    /* Part 1 */
+    /* Read data and populate List */
+    if(fp == NULL) {
+      perror("Error opening file");
+      return;
+    }
+
+    for(i=0;i<n;i++) {
+      (void)*fgets(buf,sizeof buf,fp);
+      sscanf(buf,"%g %g %g %g %d",&L[i].p[0],&L[i].p[1],&L[i].p[2],&L[i].m,&L[i].type);
+      L[i].next = NULL;
+      L[i].prev = NULL;
+    }
+
+    /* close the file when finished */
+    fclose(fp);
+
+};
+
+float periodic_separation(struct liststruct *a, struct liststruct *b, float boxSize, int dim) {
+    float t,d = 0;
+    float boxHalf = boxSize / 2.;
+    while (dim--) {
+        t = b->p[dim] - a->p[dim];
+        if (t > boxHalf) {
+            t -= boxSize;
+        }
+        if (t < -boxHalf) {
+            t += boxSize;
+        }
+        d += t*t;
+    }
+    //return sqrtf(d);
+    return d; // returning the square to avoid the sqrt calculation.
+};
+
+void list_combine(struct liststruct *L, long i, long j) {
+
+    /* Parts 2 & 3 */
+    /* Hint -- this function should not need to know what types
+       of particle are being linked */
+
+    struct liststruct *starti, *startj;
+
+    /* find the start of both lists */
+    starti = &L[i];
+    while (starti -> prev != NULL) {
+        starti = starti->prev;
+    }
+    startj = &L[j];
+    while (startj->prev !=NULL) {
+        startj = startj->prev;
+    }
+
+
+    /* Both particles in same group already? */
+    if (starti == startj) {
+        return;
+    }
+    else {
+        /* Go to end of i and join to start of j */
+        while (starti->next != NULL) {
+            starti = starti->next;
+        }
+        starti->next = startj;
+        startj->prev = starti;
+    }
+
 };

@@ -17,7 +17,7 @@ void read_data(FILE *fp, struct liststruct *L, int n) {
     }
 
     for(i=0;i<n;i++) {
-      if(fgets(buf,sizeof buf,fp)); // using result to avoid warnings
+      (void)*fgets(buf,sizeof buf,fp);
       sscanf(buf,"%g %g %g %g %d",&L[i].p[0],&L[i].p[1],&L[i].p[2],&L[i].m,&L[i].type);
       L[i].next = NULL;
       L[i].prev = NULL;

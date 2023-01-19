@@ -15,5 +15,6 @@ float periodic_separation(struct liststruct *a, struct liststruct *b, float boxS
         }
         d += t*t;
     }
-    return sqrtf(d);
+    //return sqrtf(d);
+    return d; // returning the square to avoid the sqrt calculation.
 }

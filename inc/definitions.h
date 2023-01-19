@@ -1,9 +1,9 @@
 #ifndef DEFINITIONS  /* Include guard */
 #define DEFINITIONS
 
-struct liststruct;
+//extern struct liststruct;
 
-struct liststruct {
+extern struct liststruct {
     float p[3];
     float m;
     int type;
@@ -11,6 +11,5 @@ struct liststruct {
     struct liststruct *next;
     struct liststruct *prev;
 } *List;
-
 
 #endif

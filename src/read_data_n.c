@@ -8,12 +8,7 @@ int read_data_n(FILE *fp, float *boxSize) {
     char buf[1024];
     int n;
     
-    if (fgets(buf, sizeof buf, fp) == NULL) {
-        printf("Error: There was an error opening the file.");
-        return -1;
-    }
-    
-    if(fgets(buf, sizeof buf, fp)); // means we use the result of fgets without doing do
+    (void)*fgets(buf, sizeof buf, fp); // Cast to void to avoid return value warning
     sscanf(buf,"%d %g",&n, boxSize);
     return n;
 }
