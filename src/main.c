@@ -146,7 +146,7 @@ int main(int argc, char *argv[]) {
     */
    
     for (i=0;i<n;i++) { // loop through all particles
-        int bestindex;
+        int bestindex = 0;
         float dist[2]={boxSize,boxSize};
         if (List[i].type !=1 ) { // baryons only in calc
             for (j=0;j<n;j++) { // loop through all particles
@@ -184,15 +184,19 @@ int main(int argc, char *argv[]) {
     /* Part 4 */
     /* Do some analysis on each group */
 
-    // There's something wrong down here with the logic around large groups
-    
-    float Mass[count];
+    float *Mass; //  Allocate pointer
+    Mass = (float *)malloc(count * sizeof(float)); // create memory for the array
     // All Gas and DM particles have the same mass
-    float Gas[count];
-    float DM[count];
+    float *Gas;
+    Gas = (float *)malloc(count * sizeof(float));
+    float *DM;
+    DM = (float *)malloc(count * sizeof(float));
     // stars, BH particles have different masses
-    float Star[count];
-    float BH[count];
+    float *Star;
+    Star = (float *)malloc(count * sizeof(float));
+    float *BH;
+    BH = (float *)malloc(count * sizeof(float));
+
     // allocate for largest mass
     float bigMass=0.0;
     struct liststruct *l;

@@ -198,7 +198,7 @@ int main(int argc, char *argv[]) {
 
     printf("The below arrays have size %d", count);    
     // Below arrays do not have an initialisation value, giving error in Infer
-    float Mass[count];
+    float *Mass[count] = (float *)malloc(count * sizeof(float));
     // All Gas and DM particles have the same mass
     float Gas[count];
     float DM[count];
