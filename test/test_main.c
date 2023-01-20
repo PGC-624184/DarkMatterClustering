@@ -278,7 +278,6 @@ int main(int argc, char *argv[]) {
     return 0;
 };
 
-
 int read_data_n(FILE *fp, float *boxSize) {
 
     char buf[1024];
