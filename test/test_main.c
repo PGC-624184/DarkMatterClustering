@@ -198,13 +198,19 @@ int main(int argc, char *argv[]) {
 
     printf("The below arrays have size %d", count);    
     // Below arrays do not have an initialisation value, giving error in Infer
-    float *Mass[count] = (float *)malloc(count * sizeof(float));
+    float *Mass; //  Allocate pointer
+    Mass = (float *)malloc(count * sizeof(float)); // create memory for the array
     // All Gas and DM particles have the same mass
-    float Gas[count];
-    float DM[count];
+    float *Gas;
+    Gas = (float *)malloc(count * sizeof(float));
+    float *DM;
+    DM = (float *)malloc(count * sizeof(float));
     // stars, BH particles have different masses
-    float Star[count];
-    float BH[count];
+    float *Star;
+    Star = (float *)malloc(count * sizeof(float));
+    float *BH;
+    BH = (float *)malloc(count * sizeof(float));
+
 
 
     // allocate for largest mass
