@@ -1,116 +1,116 @@
-[202718][      debug] Loading models took 21.259ms
-[202719][      debug] Sqlite write daemon: starting up
-[202719][      debug] Sqlite write daemon: set up complete, waiting for connections
-[202718][environment] CWD = /home/nathan/Desktop/DarkMatterClustering/test
-[202718][environment] No .inferconfig file found
-[202718][environment] Project root = /home/nathan/Desktop/DarkMatterClustering/test
-[202718][environment] INFER_ARGS =   @/tmp/args.tmp.4ac2d8
-[202718][environment] command line arguments:   infer run --annotation-reachability --bufferoverrun
-[202718][environment]                           --cost --immutable-cast --liveness --pulse --uninit
-[202718][environment]                           -- gcc -c test_main.c
-[202718][environment] Available memory at startup: 60253 MB
-[202718][environment] Active checkers: self-in-block (C/C++/ObjC), bufferoverrun-analysis (C/C++/ObjC, Java), bufferoverrun (C/C++/ObjC, Java), purity-analysis (C/C++/ObjC, Java), starvation (C/C++/ObjC, Java), cost (C/C++/ObjC, Java), uninit (C/C++/ObjC), siof (C/C++/ObjC), dotnet-resource-leak (C#/.Net), racerd (C/C++/ObjC, Java), pulse (C/C++/ObjC, Java), liveness (C/C++/ObjC), inefficient-keyset-iterator (Java), immutable-cast (Java), fragment-retains-view (Java), biabduction (C/C++/ObjC, Java, C#/.Net), annotation-reachability (C/C++/ObjC, Java)
-[202718][environment] Scheduler: file
-[202718][environment] Cores used: 12
-[202718][environment] Infer version v1.1.0
-[202718][environment] Copyright 2009 - present Facebook. All Rights Reserved.
-[202718][environment] 
-[202718][   progress] Capturing in make/cc mode...
-[202718][      debug] 
-[202718][      debug] *** Beginning capture of file /home/nathan/Desktop/DarkMatterClustering/test/test_main.c ***
-[202718][      debug] Loading the following linters files: /opt/infer-linux64-v1.1.0/lib/infer/infer/bin/../lib/linter_rules/linters.al
-[202718][      debug] Elapsed: 72.68ms.
-[202718][      debug] GC stats for capture:
-[202718][      debug]   minor_words: 6.96723e+06
-[202718][      debug]   promoted_words: 501807
-[202718][      debug]   major_words: 533932
-[202718][      debug]   minor_collections: 9
-[202718][      debug]   major_collections: 3
-[202718][      debug]   compactions: 0
-[202718][      debug]   top_heap_words: 1331712
-[202718][      debug]   
-[202718][environment] Parallel jobs: 12
-[202718][   progress] Found 1 source file to analyze in /home/nathan/Desktop/DarkMatterClustering/test/infer-out
-[202724][   progress] test_main.c starting
-[202724][   progress] test_main.c DONE
-[202718][      debug] Backend stats:
-[202718][      debug]   summary_file_try_load= 330
-[202718][      debug]   summary_read_from_disk= 0
-[202718][      debug]   summary_cache_hits= 1082 (76%)
-[202718][      debug]   summary_cache_misses= 330
-[202718][      debug]   ondemand_procs_analyzed= 5
-[202718][      debug]   ondemand_local_cache_hits= 1217 (98%)
-[202718][      debug]   ondemand_local_cache_misses= 21
-[202718][      debug]   proc_locker_lock_time_user= 0.00000000
-[202718][      debug]   proc_locker_lock_time_sys= 0.00000000
-[202718][      debug]   proc_locker_lock_time_wall= 0.00000000
-[202718][      debug]   proc_locker_unlock_time_user= 0.00000000
-[202718][      debug]   proc_locker_unlock_time_sys= 0.00000000
-[202718][      debug]   proc_locker_unlock_time_wall= 0.00000000
-[202718][      debug]   restart_scheduler_useful_time_user= 0.00000000
-[202718][      debug]   restart_scheduler_useful_time_sys= 0.00000000
-[202718][      debug]   restart_scheduler_useful_time_wall= 0.00000000
-[202718][      debug]   restart_scheduler_total_time_user= 0.00000000
-[202718][      debug]   restart_scheduler_total_time_sys= 0.00000000
-[202718][      debug]   restart_scheduler_total_time_wall= 0.00000000
-[202718][      debug]   
-[202718][      debug] GC stats for backend_stats.gc_stats_add.:
-[202718][      debug]   minor_words: 4.17474e+08
-[202718][      debug]   promoted_words: 3.12681e+06
-[202718][      debug]   major_words: 3.28902e+06
-[202718][      debug]   minor_collections: 400
-[202718][      debug]   major_collections: 4
-[202718][      debug]   compactions: 0
-[202718][      debug]   top_heap_words: 17731584
-[202718][      debug]   
-[202718][      debug] GC stats for backend_stats.gc_stats_max.:
-[202718][      debug]   minor_words: 4.17473e+08
-[202718][      debug]   promoted_words: 3.12681e+06
-[202718][      debug]   major_words: 3.28902e+06
-[202718][      debug]   minor_collections: 400
-[202718][      debug]   major_collections: 4
-[202718][      debug]   compactions: 0
-[202718][      debug]   top_heap_words: 3082752
-[202718][      debug]   
-[202718][      debug] Average over 12 processes
-[202718][      debug] GC stats for backend_stats.gc_stats_average.:
-[202718][      debug]   minor_words: 3.47895e+07
-[202718][      debug]   promoted_words: 260567
-[202718][      debug]   major_words: 274085
-[202718][      debug]   minor_collections: 33
-[202718][      debug]   major_collections: 0
-[202718][      debug]   compactions: 0
-[202718][      debug]   top_heap_words: 1477632
-[202718][      debug]   
-[202718][      debug] Analysis phase finished in 566ms
-[202718][      debug] backend_stats.scheduler_process_analysis_time_user= 0.00979100
-[202718][      debug] backend_stats.scheduler_process_analysis_time_sys= 0.00749100
-[202718][      debug] backend_stats.scheduler_process_analysis_time_wall= 0.56560353
-[202718][      debug] GC stats for analysis_scheduler:
-[202718][      debug]   minor_words: 460359
-[202718][      debug]   promoted_words: 3702
-[202718][      debug]   major_words: 12408
-[202718][      debug]   minor_collections: 1
-[202718][      debug]   major_collections: 2
-[202718][      debug]   compactions: 1
-[202718][      debug]   top_heap_words: 1331712
-[202718][      debug]   
-[202718][      debug] GC stats for report:
-[202718][      debug]   minor_words: 21872
-[202718][      debug]   promoted_words: 0
-[202718][      debug]   major_words: 940
-[202718][      debug]   minor_collections: 0
-[202718][      debug]   major_collections: 0
-[202718][      debug]   compactions: 0
-[202718][      debug]   top_heap_words: 1331712
-[202718][      debug]   
-[202718][      debug] GC stats for main_process_full:
-[202718][      debug]   minor_words: 9.16226e+06
-[202718][      debug]   promoted_words: 838500
-[202718][      debug]   major_words: 1.40631e+06
-[202718][      debug]   minor_collections: 21
-[202718][      debug]   major_collections: 8
-[202718][      debug]   compactions: 2
-[202718][      debug]   top_heap_words: 1331712
-[202718][      debug]   
-[202719][      debug] Sqlite write daemon: terminating
+[205464][      debug] Loading models took 26.115ms
+[205465][      debug] Sqlite write daemon: starting up
+[205465][      debug] Sqlite write daemon: set up complete, waiting for connections
+[205464][environment] CWD = /home/nathan/Desktop/DarkMatterClustering/test
+[205464][environment] No .inferconfig file found
+[205464][environment] Project root = /home/nathan/Desktop/DarkMatterClustering/test
+[205464][environment] INFER_ARGS =   @/tmp/args.tmp.fd93d3
+[205464][environment] command line arguments:   infer run --annotation-reachability --bufferoverrun
+[205464][environment]                           --cost --immutable-cast --liveness --pulse --uninit
+[205464][environment]                           -- gcc -c test_main.c
+[205464][environment] Available memory at startup: 60044 MB
+[205464][environment] Active checkers: self-in-block (C/C++/ObjC), bufferoverrun-analysis (C/C++/ObjC, Java), bufferoverrun (C/C++/ObjC, Java), purity-analysis (C/C++/ObjC, Java), starvation (C/C++/ObjC, Java), cost (C/C++/ObjC, Java), uninit (C/C++/ObjC), siof (C/C++/ObjC), dotnet-resource-leak (C#/.Net), racerd (C/C++/ObjC, Java), pulse (C/C++/ObjC, Java), liveness (C/C++/ObjC), inefficient-keyset-iterator (Java), immutable-cast (Java), fragment-retains-view (Java), biabduction (C/C++/ObjC, Java, C#/.Net), annotation-reachability (C/C++/ObjC, Java)
+[205464][environment] Scheduler: file
+[205464][environment] Cores used: 12
+[205464][environment] Infer version v1.1.0
+[205464][environment] Copyright 2009 - present Facebook. All Rights Reserved.
+[205464][environment] 
+[205464][   progress] Capturing in make/cc mode...
+[205464][      debug] 
+[205464][      debug] *** Beginning capture of file /home/nathan/Desktop/DarkMatterClustering/test/test_main.c ***
+[205464][      debug] Loading the following linters files: /opt/infer-linux64-v1.1.0/lib/infer/infer/bin/../lib/linter_rules/linters.al
+[205464][      debug] Elapsed: 63.884ms.
+[205464][      debug] GC stats for capture:
+[205464][      debug]   minor_words: 6.99446e+06
+[205464][      debug]   promoted_words: 502704
+[205464][      debug]   major_words: 534891
+[205464][      debug]   minor_collections: 9
+[205464][      debug]   major_collections: 3
+[205464][      debug]   compactions: 0
+[205464][      debug]   top_heap_words: 1331712
+[205464][      debug]   
+[205464][environment] Parallel jobs: 12
+[205464][   progress] Found 1 source file to analyze in /home/nathan/Desktop/DarkMatterClustering/test/infer-out
+[205470][   progress] test_main.c starting
+[205470][   progress] test_main.c DONE
+[205464][      debug] Backend stats:
+[205464][      debug]   summary_file_try_load= 330
+[205464][      debug]   summary_read_from_disk= 0
+[205464][      debug]   summary_cache_hits= 1109 (77%)
+[205464][      debug]   summary_cache_misses= 330
+[205464][      debug]   ondemand_procs_analyzed= 5
+[205464][      debug]   ondemand_local_cache_hits= 1241 (98%)
+[205464][      debug]   ondemand_local_cache_misses= 21
+[205464][      debug]   proc_locker_lock_time_user= 0.00000000
+[205464][      debug]   proc_locker_lock_time_sys= 0.00000000
+[205464][      debug]   proc_locker_lock_time_wall= 0.00000000
+[205464][      debug]   proc_locker_unlock_time_user= 0.00000000
+[205464][      debug]   proc_locker_unlock_time_sys= 0.00000000
+[205464][      debug]   proc_locker_unlock_time_wall= 0.00000000
+[205464][      debug]   restart_scheduler_useful_time_user= 0.00000000
+[205464][      debug]   restart_scheduler_useful_time_sys= 0.00000000
+[205464][      debug]   restart_scheduler_useful_time_wall= 0.00000000
+[205464][      debug]   restart_scheduler_total_time_user= 0.00000000
+[205464][      debug]   restart_scheduler_total_time_sys= 0.00000000
+[205464][      debug]   restart_scheduler_total_time_wall= 0.00000000
+[205464][      debug]   
+[205464][      debug] GC stats for backend_stats.gc_stats_add.:
+[205464][      debug]   minor_words: 4.245e+08
+[205464][      debug]   promoted_words: 3.09979e+06
+[205464][      debug]   major_words: 3.26245e+06
+[205464][      debug]   minor_collections: 407
+[205464][      debug]   major_collections: 5
+[205464][      debug]   compactions: 0
+[205464][      debug]   top_heap_words: 16979456
+[205464][      debug]   
+[205464][      debug] GC stats for backend_stats.gc_stats_max.:
+[205464][      debug]   minor_words: 4.24499e+08
+[205464][      debug]   promoted_words: 3.09979e+06
+[205464][      debug]   major_words: 3.26245e+06
+[205464][      debug]   minor_collections: 407
+[205464][      debug]   major_collections: 5
+[205464][      debug]   compactions: 0
+[205464][      debug]   top_heap_words: 2330624
+[205464][      debug]   
+[205464][      debug] Average over 12 processes
+[205464][      debug] GC stats for backend_stats.gc_stats_average.:
+[205464][      debug]   minor_words: 3.5375e+07
+[205464][      debug]   promoted_words: 258316
+[205464][      debug]   major_words: 271871
+[205464][      debug]   minor_collections: 33
+[205464][      debug]   major_collections: 0
+[205464][      debug]   compactions: 0
+[205464][      debug]   top_heap_words: 1414954
+[205464][      debug]   
+[205464][      debug] Analysis phase finished in 639ms
+[205464][      debug] backend_stats.scheduler_process_analysis_time_user= 0.01182700
+[205464][      debug] backend_stats.scheduler_process_analysis_time_sys= 0.00612900
+[205464][      debug] backend_stats.scheduler_process_analysis_time_wall= 0.63921216
+[205464][      debug] GC stats for analysis_scheduler:
+[205464][      debug]   minor_words: 451326
+[205464][      debug]   promoted_words: 4078
+[205464][      debug]   major_words: 12784
+[205464][      debug]   minor_collections: 1
+[205464][      debug]   major_collections: 2
+[205464][      debug]   compactions: 1
+[205464][      debug]   top_heap_words: 1331712
+[205464][      debug]   
+[205464][      debug] GC stats for report:
+[205464][      debug]   minor_words: 21872
+[205464][      debug]   promoted_words: 0
+[205464][      debug]   major_words: 940
+[205464][      debug]   minor_collections: 0
+[205464][      debug]   major_collections: 0
+[205464][      debug]   compactions: 0
+[205464][      debug]   top_heap_words: 1331712
+[205464][      debug]   
+[205464][      debug] GC stats for main_process_full:
+[205464][      debug]   minor_words: 9.18046e+06
+[205464][      debug]   promoted_words: 839773
+[205464][      debug]   major_words: 1.40765e+06
+[205464][      debug]   minor_collections: 21
+[205464][      debug]   major_collections: 8
+[205464][      debug]   compactions: 2
+[205464][      debug]   top_heap_words: 1331712
+[205464][      debug]   
+[205465][      debug] Sqlite write daemon: terminating

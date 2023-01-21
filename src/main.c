@@ -51,8 +51,12 @@ int main(int argc, char *argv[]) {
 
     /* Read in some data */
     /* Part 1 */
-    if(!(fp = fopen(fname,"r")))
+    fp = fopen(fname,"r");
+
+    if(fp==NULL) {
+        printf("Failed to open file.");
         return -1;
+    };
 
     // Find the number of particles
     n = read_data_n(fp,&boxSize);
@@ -66,9 +70,9 @@ int main(int argc, char *argv[]) {
     
     // closing files and freeing List
     if (List == NULL) {
-        printf("Error: ould not creat List. Exiting.");
-        close(fp);
         free(List);
+        printf("Error: ould not creat List. Exiting.");
+        fclose(fp);
         return -2;
     }
 
@@ -186,8 +190,6 @@ int main(int argc, char *argv[]) {
     /* Part 4 */
     /* Do some analysis on each group */
 
-    printf("The below arrays have size %d", count);    
-    // Below arrays do not have an initialisation value, giving error in Infer
     float *Mass; //  Allocate pointer
     Mass = (float *)malloc(count * sizeof(float)); // create memory for the array
     // All Gas and DM particles have the same mass

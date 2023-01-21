@@ -62,8 +62,12 @@ int main(int argc, char *argv[]) {
 
     /* Read in some data */
     /* Part 1 */
-    if(!(fp = fopen(fname,"r")))
+    fp = fopen(fname,"r");
+    if(fp == NULL) {
+        fclose(fp);
+        printf("There was an error opening the file.");
         return -1;
+    }
 
     // Find the number of particles
     n = read_data_n(fp,&boxSize);
