@@ -63,10 +63,11 @@ int main(int argc, char *argv[]) {
     // Allocate for data
     List = (struct liststruct *) malloc(n * sizeof(*List));
 
-   // closing files and freeing List
+    
+    // closing files and freeing List
     if (List == NULL) {
         printf("Error: ould not creat List. Exiting.");
-        fclose(fp);
+        close(fp);
         free(List);
         return -2;
     }
@@ -92,7 +93,7 @@ int main(int argc, char *argv[]) {
     for (i=0;i<n;i++) { //loop through particles
         if (List[i].type==1){ //only do more if DM
             //#pragma omp parallel for // Run parallel loop here bc previous loop is just a select loop.
-            for (j=i+1;j<n;j++) { // loop through remaining particles
+            for (j=0;j<n;j++) { // loop through remaining particles
                 if (List[j].type==1) { //
                     sep = periodic_separation(&List[i],&List[j],boxSize,3);
                     if (sep <= MAX_SEP2) {
@@ -166,6 +167,7 @@ int main(int argc, char *argv[]) {
 
     struct liststruct **Start = (struct liststruct **) malloc(n * sizeof(struct liststruct *));
     if(!Start) {
+        free(Start);
         printf("Couldn't allocate memory for Start array\n");
         return -3;
     }
@@ -184,6 +186,8 @@ int main(int argc, char *argv[]) {
     /* Part 4 */
     /* Do some analysis on each group */
 
+    printf("The below arrays have size %d", count);    
+    // Below arrays do not have an initialisation value, giving error in Infer
     float *Mass; //  Allocate pointer
     Mass = (float *)malloc(count * sizeof(float)); // create memory for the array
     // All Gas and DM particles have the same mass
@@ -197,12 +201,15 @@ int main(int argc, char *argv[]) {
     float *BH;
     BH = (float *)malloc(count * sizeof(float));
 
+
+
     // allocate for largest mass
     float bigMass=0.0;
     struct liststruct *l;
     float MassLimit = pow(10,9);
     int massive_count=0;
 
+    // Error from uninitialised values above
     int p;
     for(p=0;p<count;p++) { // loop over unique groups
         for(Mass[p]=0.0,l=Start[p]; l != NULL; l = l->next) {
@@ -235,13 +242,21 @@ int main(int argc, char *argv[]) {
     char outfile[30] = "analysis.csv";
     FILE *f = fopen(outfile, "w");
 
-    // check if analysis file ptr exists
+    // check if file ptr exists
     if (f == NULL) {
+        free(f);
+        free(Start);
+        free(List);
+        free(Mass);
+        free(Star);
+        free(Gas);
+        free(BH);
+        free(DM);
         printf("Error: Failed to open file");
         return -4;
     }
 
-    // analysis file header
+    // file header
     fprintf(f,"Total_Mass, Gas_Mass, DM_Mass, Star_Mass, BH_Mass\n");
     
     // write results to file 
@@ -249,15 +264,19 @@ int main(int argc, char *argv[]) {
       if (Star[i]>=MassLimit) {
         // Write masses to file
         fprintf(f,"%g, %g, %g, %g, %g\n",log10(Mass[i]),log10(Gas[i]),log10(DM[i]),log10(Star[i]),log10(BH[i]));
+        //printf("%d\n",i);
       }
-    };
-
-    //close analysis file 
+    }
     fclose(f);
 
     //clean up memory
     free(Start);
     free(List);
+    free(Mass);
+    free(Star);
+    free(Gas);
+    free(BH);
+    free(DM);
 
     return 0;
 };

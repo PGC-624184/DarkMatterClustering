@@ -104,7 +104,7 @@ int main(int argc, char *argv[]) {
     for (i=0;i<n;i++) { //loop through particles
         if (List[i].type==1){ //only do more if DM
             //#pragma omp parallel for // Run parallel loop here bc previous loop is just a select loop.
-            for (j=i+1;j<n;j++) { // loop through remaining particles
+            for (j=0;j<n;j++) { // loop through remaining particles
                 if (List[j].type==1) { //
                     sep = periodic_separation(&List[i],&List[j],boxSize,3);
                     if (sep <= MAX_SEP2) {
@@ -178,6 +178,7 @@ int main(int argc, char *argv[]) {
 
     struct liststruct **Start = (struct liststruct **) malloc(n * sizeof(struct liststruct *));
     if(!Start) {
+        free(Start);
         printf("Couldn't allocate memory for Start array\n");
         return -3;
     }
@@ -254,6 +255,14 @@ int main(int argc, char *argv[]) {
 
     // check if file ptr exists
     if (f == NULL) {
+        free(f);
+        free(Start);
+        free(List);
+        free(Mass);
+        free(Star);
+        free(Gas);
+        free(BH);
+        free(DM);
         printf("Error: Failed to open file");
         return -4;
     }
@@ -274,6 +283,11 @@ int main(int argc, char *argv[]) {
     //clean up memory
     free(Start);
     free(List);
+    free(Mass);
+    free(Star);
+    free(Gas);
+    free(BH);
+    free(DM);
 
     return 0;
 };
