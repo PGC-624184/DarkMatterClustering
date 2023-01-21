@@ -1,3 +1,8 @@
-# #!/bin/bash
+#!/bin/bash
+cd ../src
 
-infer run --annotation-reachability --bufferoverrun --cost --immutable-cast --liveness --pulse --uninit -- gcc -c test_main.c
+make clean
+
+infer run --annotation-reachability --bufferoverrun --cost --immutable-cast --liveness --pulse --uninit --results-dir ../test/infer-out -- make
+
+cd ..
