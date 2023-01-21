@@ -47,7 +47,7 @@
 "-Wno-ignored-optimization-argument"
 "-Wno-everything"
 "-fdebug-compilation-dir"
-"/home/nathan/Desktop/University/DarkMatterClustering/test"
+"/home/nathan/Desktop/DarkMatterClustering/test"
 "-ferror-limit"
 "19"
 "-fgnuc-version=4.2.1"
