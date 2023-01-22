@@ -1,320 +1,320 @@
-[235876][      debug] Loading models took 21.055ms
-[235877][      debug] Sqlite write daemon: starting up
-[235877][      debug] Sqlite write daemon: set up complete, waiting for connections
-[235876][environment] CWD = /home/nathan/Desktop/DarkMatterClustering/src
-[235876][environment] No .inferconfig file found
-[235876][environment] Project root = /home/nathan/Desktop/DarkMatterClustering/src
-[235876][environment] INFER_ARGS =   @/tmp/args.tmp.8b4557
-[235876][environment] command line arguments:   infer run --annotation-reachability --bufferoverrun
-[235876][environment]                           --cost --immutable-cast --liveness --pulse --uninit
-[235876][environment]                           --results-dir ../test/infer-out -- make
-[235876][environment] Available memory at startup: 59833 MB
-[235876][environment] Active checkers: self-in-block (C/C++/ObjC), bufferoverrun-analysis (C/C++/ObjC, Java), bufferoverrun (C/C++/ObjC, Java), purity-analysis (C/C++/ObjC, Java), starvation (C/C++/ObjC, Java), cost (C/C++/ObjC, Java), uninit (C/C++/ObjC), siof (C/C++/ObjC), dotnet-resource-leak (C#/.Net), racerd (C/C++/ObjC, Java), pulse (C/C++/ObjC, Java), liveness (C/C++/ObjC), inefficient-keyset-iterator (Java), immutable-cast (Java), fragment-retains-view (Java), biabduction (C/C++/ObjC, Java, C#/.Net), annotation-reachability (C/C++/ObjC, Java)
-[235876][environment] Scheduler: file
-[235876][environment] Cores used: 12
-[235876][environment] Infer version v1.1.0
-[235876][environment] Copyright 2009 - present Facebook. All Rights Reserved.
-[235876][environment] 
-[235876][   progress] Capturing in make/cc mode...
-[235876][environment] Running command make with env:
-[235876][environment] (Extend((PATH /opt/infer-linux64-v1.1.0/lib/infer/infer/bin/../lib/wrappers:/home/nathan/.local/bin:/usr/lib/julia-1.8.4/bin:/home/nathan/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin)(INFER_OLD_PATH /home/nathan/.local/bin:/usr/lib/julia-1.8.4/bin:/home/nathan/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin)))
-[235876][environment] 
+[246023][      debug] Loading models took 24.195ms
+[246024][      debug] Sqlite write daemon: starting up
+[246024][      debug] Sqlite write daemon: set up complete, waiting for connections
+[246023][environment] CWD = /home/nathan/Desktop/DarkMatterClustering/src
+[246023][environment] No .inferconfig file found
+[246023][environment] Project root = /home/nathan/Desktop/DarkMatterClustering/src
+[246023][environment] INFER_ARGS =   @/tmp/args.tmp.9b65c5
+[246023][environment] command line arguments:   infer run --annotation-reachability --bufferoverrun
+[246023][environment]                           --cost --immutable-cast --liveness --pulse --uninit
+[246023][environment]                           --results-dir ../test/infer-out -- make
+[246023][environment] Available memory at startup: 59245 MB
+[246023][environment] Active checkers: self-in-block (C/C++/ObjC), bufferoverrun-analysis (C/C++/ObjC, Java), bufferoverrun (C/C++/ObjC, Java), purity-analysis (C/C++/ObjC, Java), starvation (C/C++/ObjC, Java), cost (C/C++/ObjC, Java), uninit (C/C++/ObjC), siof (C/C++/ObjC), dotnet-resource-leak (C#/.Net), racerd (C/C++/ObjC, Java), pulse (C/C++/ObjC, Java), liveness (C/C++/ObjC), inefficient-keyset-iterator (Java), immutable-cast (Java), fragment-retains-view (Java), biabduction (C/C++/ObjC, Java, C#/.Net), annotation-reachability (C/C++/ObjC, Java)
+[246023][environment] Scheduler: file
+[246023][environment] Cores used: 12
+[246023][environment] Infer version v1.1.0
+[246023][environment] Copyright 2009 - present Facebook. All Rights Reserved.
+[246023][environment] 
+[246023][   progress] Capturing in make/cc mode...
+[246023][environment] Running command make with env:
+[246023][environment] (Extend((PATH /opt/infer-linux64-v1.1.0/lib/infer/infer/bin/../lib/wrappers:/home/nathan/.local/bin:/usr/lib/julia-1.8.4/bin:/home/nathan/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin)(INFER_OLD_PATH /home/nathan/.local/bin:/usr/lib/julia-1.8.4/bin:/home/nathan/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin)))
+[246023][environment] 
 
-[235879][environment] CWD = /home/nathan/Desktop/DarkMatterClustering/src
-[235879][environment] No .inferconfig file found
-[235879][environment] Project root = /home/nathan/Desktop/DarkMatterClustering/src
-[235879][environment] INFER_ARGS =   @/tmp/args.tmp.cd27a2
-[235879][environment] command line arguments:   gcc -c -o ../obj/main.o main.c -I../inc -Wall -lm
-[235879][environment]                           -O3 -fopenmp
-[235879][environment] Available memory at startup: 59801 MB
-[235879][environment] Active checkers: self-in-block (C/C++/ObjC), bufferoverrun-analysis (C/C++/ObjC, Java), bufferoverrun (C/C++/ObjC, Java), purity-analysis (C/C++/ObjC, Java), starvation (C/C++/ObjC, Java), cost (C/C++/ObjC, Java), uninit (C/C++/ObjC), siof (C/C++/ObjC), dotnet-resource-leak (C#/.Net), racerd (C/C++/ObjC, Java), pulse (C/C++/ObjC, Java), liveness (C/C++/ObjC), inefficient-keyset-iterator (Java), immutable-cast (Java), fragment-retains-view (Java), biabduction (C/C++/ObjC, Java, C#/.Net), annotation-reachability (C/C++/ObjC, Java)
-[235879][      debug] 
-[235879][      debug] *** Beginning capture of file /home/nathan/Desktop/DarkMatterClustering/src/main.c ***
-[235879][      debug] Loading the following linters files: /opt/infer-linux64-v1.1.0/lib/infer/infer/bin/../lib/linter_rules/linters.al
-[235879][      debug] Elapsed: 51.452ms.
-[235879][      debug] GC stats for capture:
-[235879][      debug]   minor_words: 6.48116e+06
-[235879][      debug]   promoted_words: 623476
-[235879][      debug]   major_words: 653909
-[235879][      debug]   minor_collections: 8
-[235879][      debug]   major_collections: 2
-[235879][      debug]   compactions: 0
-[235879][      debug]   top_heap_words: 875008
-[235879][      debug]   
-[235879][      debug] GC stats for main_process_full:
-[235879][      debug]   minor_words: 7.93102e+06
-[235879][      debug]   promoted_words: 792123
-[235879][      debug]   major_words: 843208
-[235879][      debug]   minor_collections: 20
-[235879][      debug]   major_collections: 5
-[235879][      debug]   compactions: 1
-[235879][      debug]   top_heap_words: 875008
-[235879][      debug]   
-[235879][environment] Scheduler: file
-[235879][environment] Cores used: 12
-[235879][environment] 
-[235884][environment] CWD = /home/nathan/Desktop/DarkMatterClustering/src
-[235884][environment] No .inferconfig file found
-[235884][environment] Project root = /home/nathan/Desktop/DarkMatterClustering/src
-[235884][environment] INFER_ARGS =   @/tmp/args.tmp.1c0bb7
-[235884][environment] command line arguments:   gcc -c -o ../obj/read_data_n.o read_data_n.c
-[235884][environment]                           -I../inc -Wall -lm -O3 -fopenmp
-[235884][environment] Available memory at startup: 59803 MB
-[235884][environment] Active checkers: self-in-block (C/C++/ObjC), bufferoverrun-analysis (C/C++/ObjC, Java), bufferoverrun (C/C++/ObjC, Java), purity-analysis (C/C++/ObjC, Java), starvation (C/C++/ObjC, Java), cost (C/C++/ObjC, Java), uninit (C/C++/ObjC), siof (C/C++/ObjC), dotnet-resource-leak (C#/.Net), racerd (C/C++/ObjC, Java), pulse (C/C++/ObjC, Java), liveness (C/C++/ObjC), inefficient-keyset-iterator (Java), immutable-cast (Java), fragment-retains-view (Java), biabduction (C/C++/ObjC, Java, C#/.Net), annotation-reachability (C/C++/ObjC, Java)
-[235884][      debug] 
-[235884][      debug] *** Beginning capture of file /home/nathan/Desktop/DarkMatterClustering/src/read_data_n.c ***
-[235884][      debug] Loading the following linters files: /opt/infer-linux64-v1.1.0/lib/infer/infer/bin/../lib/linter_rules/linters.al
-[235884][      debug] Elapsed: 24.169ms.
-[235884][      debug] GC stats for capture:
-[235884][      debug]   minor_words: 1.75799e+06
-[235884][      debug]   promoted_words: 304754
-[235884][      debug]   major_words: 320190
-[235884][      debug]   minor_collections: 3
-[235884][      debug]   major_collections: 1
-[235884][      debug]   compactions: 0
-[235884][      debug]   top_heap_words: 499712
-[235884][      debug]   
-[235884][      debug] GC stats for main_process_full:
-[235884][      debug]   minor_words: 3.20786e+06
-[235884][      debug]   promoted_words: 473404
-[235884][      debug]   major_words: 509492
-[235884][      debug]   minor_collections: 15
-[235884][      debug]   major_collections: 4
-[235884][      debug]   compactions: 1
-[235884][      debug]   top_heap_words: 499712
-[235884][      debug]   
-[235884][environment] Scheduler: file
-[235884][environment] Cores used: 12
-[235884][environment] 
-[235889][environment] CWD = /home/nathan/Desktop/DarkMatterClustering/src
-[235889][environment] No .inferconfig file found
-[235889][environment] Project root = /home/nathan/Desktop/DarkMatterClustering/src
-[235889][environment] INFER_ARGS =   @/tmp/args.tmp.c94eb0
-[235889][environment] command line arguments:   gcc -c -o ../obj/read_data.o read_data.c -I../inc
-[235889][environment]                           -Wall -lm -O3 -fopenmp
-[235889][environment] Available memory at startup: 59800 MB
-[235889][environment] Active checkers: self-in-block (C/C++/ObjC), bufferoverrun-analysis (C/C++/ObjC, Java), bufferoverrun (C/C++/ObjC, Java), purity-analysis (C/C++/ObjC, Java), starvation (C/C++/ObjC, Java), cost (C/C++/ObjC, Java), uninit (C/C++/ObjC), siof (C/C++/ObjC), dotnet-resource-leak (C#/.Net), racerd (C/C++/ObjC, Java), pulse (C/C++/ObjC, Java), liveness (C/C++/ObjC), inefficient-keyset-iterator (Java), immutable-cast (Java), fragment-retains-view (Java), biabduction (C/C++/ObjC, Java, C#/.Net), annotation-reachability (C/C++/ObjC, Java)
-[235889][      debug] 
-[235889][      debug] *** Beginning capture of file /home/nathan/Desktop/DarkMatterClustering/src/read_data.c ***
-[235889][      debug] Loading the following linters files: /opt/infer-linux64-v1.1.0/lib/infer/infer/bin/../lib/linter_rules/linters.al
-[235889][      debug] Elapsed: 23.896ms.
-[235889][      debug] GC stats for capture:
-[235889][      debug]   minor_words: 1.89862e+06
-[235889][      debug]   promoted_words: 312019
-[235889][      debug]   major_words: 328711
-[235889][      debug]   minor_collections: 3
-[235889][      debug]   major_collections: 1
-[235889][      debug]   compactions: 0
-[235889][      debug]   top_heap_words: 499712
-[235889][      debug]   
-[235889][      debug] GC stats for main_process_full:
-[235889][      debug]   minor_words: 3.34849e+06
-[235889][      debug]   promoted_words: 480669
-[235889][      debug]   major_words: 518013
-[235889][      debug]   minor_collections: 15
-[235889][      debug]   major_collections: 4
-[235889][      debug]   compactions: 1
-[235889][      debug]   top_heap_words: 499712
-[235889][      debug]   
-[235889][environment] Scheduler: file
-[235889][environment] Cores used: 12
-[235889][environment] 
-[235894][environment] CWD = /home/nathan/Desktop/DarkMatterClustering/src
-[235894][environment] No .inferconfig file found
-[235894][environment] Project root = /home/nathan/Desktop/DarkMatterClustering/src
-[235894][environment] INFER_ARGS =   @/tmp/args.tmp.e17956
-[235894][environment] command line arguments:   gcc -c -o ../obj/periodic_separation.o
-[235894][environment]                           periodic_separation.c -I../inc -Wall -lm -O3
-[235894][environment]                           -fopenmp
-[235894][environment] Available memory at startup: 59797 MB
-[235894][environment] Active checkers: self-in-block (C/C++/ObjC), bufferoverrun-analysis (C/C++/ObjC, Java), bufferoverrun (C/C++/ObjC, Java), purity-analysis (C/C++/ObjC, Java), starvation (C/C++/ObjC, Java), cost (C/C++/ObjC, Java), uninit (C/C++/ObjC), siof (C/C++/ObjC), dotnet-resource-leak (C#/.Net), racerd (C/C++/ObjC, Java), pulse (C/C++/ObjC, Java), liveness (C/C++/ObjC), inefficient-keyset-iterator (Java), immutable-cast (Java), fragment-retains-view (Java), biabduction (C/C++/ObjC, Java, C#/.Net), annotation-reachability (C/C++/ObjC, Java)
-[235894][      debug] 
-[235894][      debug] *** Beginning capture of file /home/nathan/Desktop/DarkMatterClustering/src/periodic_separation.c ***
-[235894][      debug] Loading the following linters files: /opt/infer-linux64-v1.1.0/lib/infer/infer/bin/../lib/linter_rules/linters.al
-[235894][      debug] Elapsed: 25.608ms.
-[235894][      debug] GC stats for capture:
-[235894][      debug]   minor_words: 2.51642e+06
-[235894][      debug]   promoted_words: 309255
-[235894][      debug]   major_words: 323213
-[235894][      debug]   minor_collections: 3
-[235894][      debug]   major_collections: 1
-[235894][      debug]   compactions: 0
-[235894][      debug]   top_heap_words: 499712
-[235894][      debug]   
-[235894][      debug] GC stats for main_process_full:
-[235894][      debug]   minor_words: 3.96631e+06
-[235894][      debug]   promoted_words: 477909
-[235894][      debug]   major_words: 512519
-[235894][      debug]   minor_collections: 15
-[235894][      debug]   major_collections: 4
-[235894][      debug]   compactions: 1
-[235894][      debug]   top_heap_words: 499712
-[235894][      debug]   
-[235894][environment] Scheduler: file
-[235894][environment] Cores used: 12
-[235894][environment] 
-[235899][environment] CWD = /home/nathan/Desktop/DarkMatterClustering/src
-[235899][environment] No .inferconfig file found
-[235899][environment] Project root = /home/nathan/Desktop/DarkMatterClustering/src
-[235899][environment] INFER_ARGS =   @/tmp/args.tmp.4bfbde
-[235899][environment] command line arguments:   gcc -c -o ../obj/list_combine.o list_combine.c
-[235899][environment]                           -I../inc -Wall -lm -O3 -fopenmp
-[235899][environment] Available memory at startup: 59792 MB
-[235899][environment] Active checkers: self-in-block (C/C++/ObjC), bufferoverrun-analysis (C/C++/ObjC, Java), bufferoverrun (C/C++/ObjC, Java), purity-analysis (C/C++/ObjC, Java), starvation (C/C++/ObjC, Java), cost (C/C++/ObjC, Java), uninit (C/C++/ObjC), siof (C/C++/ObjC), dotnet-resource-leak (C#/.Net), racerd (C/C++/ObjC, Java), pulse (C/C++/ObjC, Java), liveness (C/C++/ObjC), inefficient-keyset-iterator (Java), immutable-cast (Java), fragment-retains-view (Java), biabduction (C/C++/ObjC, Java, C#/.Net), annotation-reachability (C/C++/ObjC, Java)
-[235899][      debug] 
-[235899][      debug] *** Beginning capture of file /home/nathan/Desktop/DarkMatterClustering/src/list_combine.c ***
-[235899][      debug] Loading the following linters files: /opt/infer-linux64-v1.1.0/lib/infer/infer/bin/../lib/linter_rules/linters.al
-[235899][      debug] Elapsed: 15.309ms.
-[235899][      debug] GC stats for capture:
-[235899][      debug]   minor_words: 927145
-[235899][      debug]   promoted_words: 224515
-[235899][      debug]   major_words: 234754
-[235899][      debug]   minor_collections: 2
-[235899][      debug]   major_collections: 1
-[235899][      debug]   compactions: 0
-[235899][      debug]   top_heap_words: 434176
-[235899][      debug]   
-[235899][      debug] GC stats for main_process_full:
-[235899][      debug]   minor_words: 2.37702e+06
-[235899][      debug]   promoted_words: 393166
-[235899][      debug]   major_words: 424057
-[235899][      debug]   minor_collections: 14
-[235899][      debug]   major_collections: 4
-[235899][      debug]   compactions: 1
-[235899][      debug]   top_heap_words: 434176
-[235899][      debug]   
-[235899][environment] Scheduler: file
-[235899][environment] Cores used: 12
-[235899][environment] 
-[235904][environment] CWD = /home/nathan/Desktop/DarkMatterClustering/src
-[235904][environment] No .inferconfig file found
-[235904][environment] Project root = /home/nathan/Desktop/DarkMatterClustering/src
-[235904][environment] INFER_ARGS =   @/tmp/args.tmp.ee2f17
-[235904][environment] command line arguments:   gcc -o ../bin/Friend_of_Friends ../obj/main.o
-[235904][environment]                           ../obj/read_data_n.o ../obj/read_data.o
-[235904][environment]                           ../obj/periodic_separation.o ../obj/list_combine.o
-[235904][environment]                           -I../inc -Wall -lm -O3 -fopenmp
-[235904][environment] Available memory at startup: 59791 MB
-[235904][environment] Active checkers: self-in-block (C/C++/ObjC), bufferoverrun-analysis (C/C++/ObjC, Java), bufferoverrun (C/C++/ObjC, Java), purity-analysis (C/C++/ObjC, Java), starvation (C/C++/ObjC, Java), cost (C/C++/ObjC, Java), uninit (C/C++/ObjC), siof (C/C++/ObjC), dotnet-resource-leak (C#/.Net), racerd (C/C++/ObjC, Java), pulse (C/C++/ObjC, Java), liveness (C/C++/ObjC), inefficient-keyset-iterator (Java), immutable-cast (Java), fragment-retains-view (Java), biabduction (C/C++/ObjC, Java, C#/.Net), annotation-reachability (C/C++/ObjC, Java)
-[235904][      debug] GC stats for capture:
-[235904][      debug]   minor_words: 7250
-[235904][      debug]   promoted_words: 0
-[235904][      debug]   major_words: 0
-[235904][      debug]   minor_collections: 0
-[235904][      debug]   major_collections: 0
-[235904][      debug]   compactions: 0
-[235904][      debug]   top_heap_words: 188416
-[235904][      debug]   
-[235904][      debug] GC stats for main_process_full:
-[235904][      debug]   minor_words: 1.45748e+06
-[235904][      debug]   promoted_words: 168693
-[235904][      debug]   major_words: 189345
-[235904][      debug]   minor_collections: 12
-[235904][      debug]   major_collections: 3
-[235904][      debug]   compactions: 1
-[235904][      debug]   top_heap_words: 188416
-[235904][      debug]   
-[235904][environment] Scheduler: file
-[235904][environment] Cores used: 12
-[235904][environment] [235876][      debug] GC stats for capture:
-[235876][      debug]   minor_words: 1559
-[235876][      debug]   promoted_words: 0
-[235876][      debug]   major_words: 0
-[235876][      debug]   minor_collections: 0
-[235876][      debug]   major_collections: 0
-[235876][      debug]   compactions: 0
-[235876][      debug]   top_heap_words: 875008
-[235876][      debug]   
-[235876][environment] Parallel jobs: 12
-[235876][   progress] Found 5 source files to analyze in /home/nathan/Desktop/DarkMatterClustering/test/infer-out
-[235910][   progress] list_combine.c starting
-[235913][   progress] periodic_separation.c starting
-[235912][   progress] read_data_n.c starting
-[235909][   progress] main.c starting
-[235911][   progress] read_data.c starting
-[235912][   progress] read_data_n.c DONE
-[235911][   progress] read_data.c DONE
-[235913][   progress] periodic_separation.c DONE
-[235910][   progress] list_combine.c DONE
-[235909][   progress] main.c DONE
-[235876][      debug] Backend stats:
-[235876][      debug]   summary_file_try_load= 400
-[235876][      debug]   summary_read_from_disk= 1
-[235876][      debug]   summary_cache_hits= 1244 (75%)
-[235876][      debug]   summary_cache_misses= 400
-[235876][      debug]   ondemand_procs_analyzed= 8
-[235876][      debug]   ondemand_local_cache_hits= 1323 (97%)
-[235876][      debug]   ondemand_local_cache_misses= 32
-[235876][      debug]   proc_locker_lock_time_user= 0.00000000
-[235876][      debug]   proc_locker_lock_time_sys= 0.00000000
-[235876][      debug]   proc_locker_lock_time_wall= 0.00000000
-[235876][      debug]   proc_locker_unlock_time_user= 0.00000000
-[235876][      debug]   proc_locker_unlock_time_sys= 0.00000000
-[235876][      debug]   proc_locker_unlock_time_wall= 0.00000000
-[235876][      debug]   restart_scheduler_useful_time_user= 0.00000000
-[235876][      debug]   restart_scheduler_useful_time_sys= 0.00000000
-[235876][      debug]   restart_scheduler_useful_time_wall= 0.00000000
-[235876][      debug]   restart_scheduler_total_time_user= 0.00000000
-[235876][      debug]   restart_scheduler_total_time_sys= 0.00000000
-[235876][      debug]   restart_scheduler_total_time_wall= 0.00000000
-[235876][      debug]   
-[235876][      debug] GC stats for backend_stats.gc_stats_add.:
-[235876][      debug]   minor_words: 4.85919e+08
-[235876][      debug]   promoted_words: 3.53425e+06
-[235876][      debug]   major_words: 3.76123e+06
-[235876][      debug]   minor_collections: 467
-[235876][      debug]   major_collections: 17
-[235876][      debug]   compactions: 0
-[235876][      debug]   top_heap_words: 11781632
-[235876][      debug]   
-[235876][      debug] GC stats for backend_stats.gc_stats_max.:
-[235876][      debug]   minor_words: 3.40236e+08
-[235876][      debug]   promoted_words: 2.59628e+06
-[235876][      debug]   major_words: 2.78287e+06
-[235876][      debug]   minor_collections: 327
-[235876][      debug]   major_collections: 8
-[235876][      debug]   compactions: 0
-[235876][      debug]   top_heap_words: 1761792
-[235876][      debug]   
-[235876][      debug] Average over 12 processes
-[235876][      debug] GC stats for backend_stats.gc_stats_average.:
-[235876][      debug]   minor_words: 4.04932e+07
-[235876][      debug]   promoted_words: 294521
-[235876][      debug]   major_words: 313436
-[235876][      debug]   minor_collections: 38
-[235876][      debug]   major_collections: 1
-[235876][      debug]   compactions: 0
-[235876][      debug]   top_heap_words: 981802
-[235876][      debug]   
-[235876][      debug] Analysis phase finished in 476ms
-[235876][      debug] backend_stats.scheduler_process_analysis_time_user= 0.00520700
-[235876][      debug] backend_stats.scheduler_process_analysis_time_sys= 0.00918700
-[235876][      debug] backend_stats.scheduler_process_analysis_time_wall= 0.47637857
-[235876][      debug] GC stats for analysis_scheduler:
-[235876][      debug]   minor_words: 779673
-[235876][      debug]   promoted_words: 1713
-[235876][      debug]   major_words: 10419
-[235876][      debug]   minor_collections: 1
-[235876][      debug]   major_collections: 2
-[235876][      debug]   compactions: 1
-[235876][      debug]   top_heap_words: 875008
-[235876][      debug]   
-[235876][      debug] GC stats for report:
-[235876][      debug]   minor_words: 142141
-[235876][      debug]   promoted_words: 0
-[235876][      debug]   major_words: 938
-[235876][      debug]   minor_collections: 0
-[235876][      debug]   major_collections: 0
-[235876][      debug]   compactions: 0
-[235876][      debug]   top_heap_words: 875008
-[235876][      debug]   
-[235876][      debug] GC stats for main_process_full:
-[235876][      debug]   minor_words: 2.63737e+06
-[235876][      debug]   promoted_words: 334717
-[235876][      debug]   major_words: 870402
-[235876][      debug]   minor_collections: 12
-[235876][      debug]   major_collections: 5
-[235876][      debug]   compactions: 2
-[235876][      debug]   top_heap_words: 875008
-[235876][      debug]   
-[235877][      debug] Sqlite write daemon: terminating
+[246026][environment] CWD = /home/nathan/Desktop/DarkMatterClustering/src
+[246026][environment] No .inferconfig file found
+[246026][environment] Project root = /home/nathan/Desktop/DarkMatterClustering/src
+[246026][environment] INFER_ARGS =   @/tmp/args.tmp.8055c5
+[246026][environment] command line arguments:   gcc -c -o ../obj/main.o main.c -I../inc -Wall -lm
+[246026][environment]                           -O3 -fopenmp
+[246026][environment] Available memory at startup: 59210 MB
+[246026][environment] Active checkers: self-in-block (C/C++/ObjC), bufferoverrun-analysis (C/C++/ObjC, Java), bufferoverrun (C/C++/ObjC, Java), purity-analysis (C/C++/ObjC, Java), starvation (C/C++/ObjC, Java), cost (C/C++/ObjC, Java), uninit (C/C++/ObjC), siof (C/C++/ObjC), dotnet-resource-leak (C#/.Net), racerd (C/C++/ObjC, Java), pulse (C/C++/ObjC, Java), liveness (C/C++/ObjC), inefficient-keyset-iterator (Java), immutable-cast (Java), fragment-retains-view (Java), biabduction (C/C++/ObjC, Java, C#/.Net), annotation-reachability (C/C++/ObjC, Java)
+[246026][      debug] 
+[246026][      debug] *** Beginning capture of file /home/nathan/Desktop/DarkMatterClustering/src/main.c ***
+[246026][      debug] Loading the following linters files: /opt/infer-linux64-v1.1.0/lib/infer/infer/bin/../lib/linter_rules/linters.al
+[246026][      debug] Elapsed: 54.121ms.
+[246026][      debug] GC stats for capture:
+[246026][      debug]   minor_words: 6.50367e+06
+[246026][      debug]   promoted_words: 623857
+[246026][      debug]   major_words: 654345
+[246026][      debug]   minor_collections: 8
+[246026][      debug]   major_collections: 2
+[246026][      debug]   compactions: 0
+[246026][      debug]   top_heap_words: 875008
+[246026][      debug]   
+[246026][      debug] GC stats for main_process_full:
+[246026][      debug]   minor_words: 7.95354e+06
+[246026][      debug]   promoted_words: 792504
+[246026][      debug]   major_words: 843644
+[246026][      debug]   minor_collections: 20
+[246026][      debug]   major_collections: 5
+[246026][      debug]   compactions: 1
+[246026][      debug]   top_heap_words: 875008
+[246026][      debug]   
+[246026][environment] Scheduler: file
+[246026][environment] Cores used: 12
+[246026][environment] 
+[246031][environment] CWD = /home/nathan/Desktop/DarkMatterClustering/src
+[246031][environment] No .inferconfig file found
+[246031][environment] Project root = /home/nathan/Desktop/DarkMatterClustering/src
+[246031][environment] INFER_ARGS =   @/tmp/args.tmp.ca49fb
+[246031][environment] command line arguments:   gcc -c -o ../obj/read_data_n.o read_data_n.c
+[246031][environment]                           -I../inc -Wall -lm -O3 -fopenmp
+[246031][environment] Available memory at startup: 59212 MB
+[246031][environment] Active checkers: self-in-block (C/C++/ObjC), bufferoverrun-analysis (C/C++/ObjC, Java), bufferoverrun (C/C++/ObjC, Java), purity-analysis (C/C++/ObjC, Java), starvation (C/C++/ObjC, Java), cost (C/C++/ObjC, Java), uninit (C/C++/ObjC), siof (C/C++/ObjC), dotnet-resource-leak (C#/.Net), racerd (C/C++/ObjC, Java), pulse (C/C++/ObjC, Java), liveness (C/C++/ObjC), inefficient-keyset-iterator (Java), immutable-cast (Java), fragment-retains-view (Java), biabduction (C/C++/ObjC, Java, C#/.Net), annotation-reachability (C/C++/ObjC, Java)
+[246031][      debug] 
+[246031][      debug] *** Beginning capture of file /home/nathan/Desktop/DarkMatterClustering/src/read_data_n.c ***
+[246031][      debug] Loading the following linters files: /opt/infer-linux64-v1.1.0/lib/infer/infer/bin/../lib/linter_rules/linters.al
+[246031][      debug] Elapsed: 22.592ms.
+[246031][      debug] GC stats for capture:
+[246031][      debug]   minor_words: 1.75799e+06
+[246031][      debug]   promoted_words: 304754
+[246031][      debug]   major_words: 320190
+[246031][      debug]   minor_collections: 3
+[246031][      debug]   major_collections: 1
+[246031][      debug]   compactions: 0
+[246031][      debug]   top_heap_words: 499712
+[246031][      debug]   
+[246031][      debug] GC stats for main_process_full:
+[246031][      debug]   minor_words: 3.20786e+06
+[246031][      debug]   promoted_words: 473404
+[246031][      debug]   major_words: 509492
+[246031][      debug]   minor_collections: 15
+[246031][      debug]   major_collections: 4
+[246031][      debug]   compactions: 1
+[246031][      debug]   top_heap_words: 499712
+[246031][      debug]   
+[246031][environment] Scheduler: file
+[246031][environment] Cores used: 12
+[246031][environment] 
+[246036][environment] CWD = /home/nathan/Desktop/DarkMatterClustering/src
+[246036][environment] No .inferconfig file found
+[246036][environment] Project root = /home/nathan/Desktop/DarkMatterClustering/src
+[246036][environment] INFER_ARGS =   @/tmp/args.tmp.5f40b4
+[246036][environment] command line arguments:   gcc -c -o ../obj/read_data.o read_data.c -I../inc
+[246036][environment]                           -Wall -lm -O3 -fopenmp
+[246036][environment] Available memory at startup: 59210 MB
+[246036][environment] Active checkers: self-in-block (C/C++/ObjC), bufferoverrun-analysis (C/C++/ObjC, Java), bufferoverrun (C/C++/ObjC, Java), purity-analysis (C/C++/ObjC, Java), starvation (C/C++/ObjC, Java), cost (C/C++/ObjC, Java), uninit (C/C++/ObjC), siof (C/C++/ObjC), dotnet-resource-leak (C#/.Net), racerd (C/C++/ObjC, Java), pulse (C/C++/ObjC, Java), liveness (C/C++/ObjC), inefficient-keyset-iterator (Java), immutable-cast (Java), fragment-retains-view (Java), biabduction (C/C++/ObjC, Java, C#/.Net), annotation-reachability (C/C++/ObjC, Java)
+[246036][      debug] 
+[246036][      debug] *** Beginning capture of file /home/nathan/Desktop/DarkMatterClustering/src/read_data.c ***
+[246036][      debug] Loading the following linters files: /opt/infer-linux64-v1.1.0/lib/infer/infer/bin/../lib/linter_rules/linters.al
+[246036][      debug] Elapsed: 24.046ms.
+[246036][      debug] GC stats for capture:
+[246036][      debug]   minor_words: 1.89862e+06
+[246036][      debug]   promoted_words: 312019
+[246036][      debug]   major_words: 328711
+[246036][      debug]   minor_collections: 3
+[246036][      debug]   major_collections: 1
+[246036][      debug]   compactions: 0
+[246036][      debug]   top_heap_words: 499712
+[246036][      debug]   
+[246036][      debug] GC stats for main_process_full:
+[246036][      debug]   minor_words: 3.34849e+06
+[246036][      debug]   promoted_words: 480669
+[246036][      debug]   major_words: 518013
+[246036][      debug]   minor_collections: 15
+[246036][      debug]   major_collections: 4
+[246036][      debug]   compactions: 1
+[246036][      debug]   top_heap_words: 499712
+[246036][      debug]   
+[246036][environment] Scheduler: file
+[246036][environment] Cores used: 12
+[246036][environment] 
+[246041][environment] CWD = /home/nathan/Desktop/DarkMatterClustering/src
+[246041][environment] No .inferconfig file found
+[246041][environment] Project root = /home/nathan/Desktop/DarkMatterClustering/src
+[246041][environment] INFER_ARGS =   @/tmp/args.tmp.4b59a0
+[246041][environment] command line arguments:   gcc -c -o ../obj/periodic_separation.o
+[246041][environment]                           periodic_separation.c -I../inc -Wall -lm -O3
+[246041][environment]                           -fopenmp
+[246041][environment] Available memory at startup: 59209 MB
+[246041][environment] Active checkers: self-in-block (C/C++/ObjC), bufferoverrun-analysis (C/C++/ObjC, Java), bufferoverrun (C/C++/ObjC, Java), purity-analysis (C/C++/ObjC, Java), starvation (C/C++/ObjC, Java), cost (C/C++/ObjC, Java), uninit (C/C++/ObjC), siof (C/C++/ObjC), dotnet-resource-leak (C#/.Net), racerd (C/C++/ObjC, Java), pulse (C/C++/ObjC, Java), liveness (C/C++/ObjC), inefficient-keyset-iterator (Java), immutable-cast (Java), fragment-retains-view (Java), biabduction (C/C++/ObjC, Java, C#/.Net), annotation-reachability (C/C++/ObjC, Java)
+[246041][      debug] 
+[246041][      debug] *** Beginning capture of file /home/nathan/Desktop/DarkMatterClustering/src/periodic_separation.c ***
+[246041][      debug] Loading the following linters files: /opt/infer-linux64-v1.1.0/lib/infer/infer/bin/../lib/linter_rules/linters.al
+[246041][      debug] Elapsed: 24.702ms.
+[246041][      debug] GC stats for capture:
+[246041][      debug]   minor_words: 2.51642e+06
+[246041][      debug]   promoted_words: 309255
+[246041][      debug]   major_words: 323213
+[246041][      debug]   minor_collections: 3
+[246041][      debug]   major_collections: 1
+[246041][      debug]   compactions: 0
+[246041][      debug]   top_heap_words: 499712
+[246041][      debug]   
+[246041][      debug] GC stats for main_process_full:
+[246041][      debug]   minor_words: 3.96631e+06
+[246041][      debug]   promoted_words: 477909
+[246041][      debug]   major_words: 512519
+[246041][      debug]   minor_collections: 15
+[246041][      debug]   major_collections: 4
+[246041][      debug]   compactions: 1
+[246041][      debug]   top_heap_words: 499712
+[246041][      debug]   
+[246041][environment] Scheduler: file
+[246041][environment] Cores used: 12
+[246041][environment] 
+[246046][environment] CWD = /home/nathan/Desktop/DarkMatterClustering/src
+[246046][environment] No .inferconfig file found
+[246046][environment] Project root = /home/nathan/Desktop/DarkMatterClustering/src
+[246046][environment] INFER_ARGS =   @/tmp/args.tmp.213eed
+[246046][environment] command line arguments:   gcc -c -o ../obj/list_combine.o list_combine.c
+[246046][environment]                           -I../inc -Wall -lm -O3 -fopenmp
+[246046][environment] Available memory at startup: 59201 MB
+[246046][environment] Active checkers: self-in-block (C/C++/ObjC), bufferoverrun-analysis (C/C++/ObjC, Java), bufferoverrun (C/C++/ObjC, Java), purity-analysis (C/C++/ObjC, Java), starvation (C/C++/ObjC, Java), cost (C/C++/ObjC, Java), uninit (C/C++/ObjC), siof (C/C++/ObjC), dotnet-resource-leak (C#/.Net), racerd (C/C++/ObjC, Java), pulse (C/C++/ObjC, Java), liveness (C/C++/ObjC), inefficient-keyset-iterator (Java), immutable-cast (Java), fragment-retains-view (Java), biabduction (C/C++/ObjC, Java, C#/.Net), annotation-reachability (C/C++/ObjC, Java)
+[246046][      debug] 
+[246046][      debug] *** Beginning capture of file /home/nathan/Desktop/DarkMatterClustering/src/list_combine.c ***
+[246046][      debug] Loading the following linters files: /opt/infer-linux64-v1.1.0/lib/infer/infer/bin/../lib/linter_rules/linters.al
+[246046][      debug] Elapsed: 15.522ms.
+[246046][      debug] GC stats for capture:
+[246046][      debug]   minor_words: 927147
+[246046][      debug]   promoted_words: 224515
+[246046][      debug]   major_words: 234754
+[246046][      debug]   minor_collections: 2
+[246046][      debug]   major_collections: 1
+[246046][      debug]   compactions: 0
+[246046][      debug]   top_heap_words: 434176
+[246046][      debug]   
+[246046][      debug] GC stats for main_process_full:
+[246046][      debug]   minor_words: 2.37702e+06
+[246046][      debug]   promoted_words: 393166
+[246046][      debug]   major_words: 424057
+[246046][      debug]   minor_collections: 14
+[246046][      debug]   major_collections: 4
+[246046][      debug]   compactions: 1
+[246046][      debug]   top_heap_words: 434176
+[246046][      debug]   
+[246046][environment] Scheduler: file
+[246046][environment] Cores used: 12
+[246046][environment] 
+[246051][environment] CWD = /home/nathan/Desktop/DarkMatterClustering/src
+[246051][environment] No .inferconfig file found
+[246051][environment] Project root = /home/nathan/Desktop/DarkMatterClustering/src
+[246051][environment] INFER_ARGS =   @/tmp/args.tmp.251418
+[246051][environment] command line arguments:   gcc -o ../bin/Friend_of_Friends ../obj/main.o
+[246051][environment]                           ../obj/read_data_n.o ../obj/read_data.o
+[246051][environment]                           ../obj/periodic_separation.o ../obj/list_combine.o
+[246051][environment]                           -I../inc -Wall -lm -O3 -fopenmp
+[246051][environment] Available memory at startup: 59204 MB
+[246051][environment] Active checkers: self-in-block (C/C++/ObjC), bufferoverrun-analysis (C/C++/ObjC, Java), bufferoverrun (C/C++/ObjC, Java), purity-analysis (C/C++/ObjC, Java), starvation (C/C++/ObjC, Java), cost (C/C++/ObjC, Java), uninit (C/C++/ObjC), siof (C/C++/ObjC), dotnet-resource-leak (C#/.Net), racerd (C/C++/ObjC, Java), pulse (C/C++/ObjC, Java), liveness (C/C++/ObjC), inefficient-keyset-iterator (Java), immutable-cast (Java), fragment-retains-view (Java), biabduction (C/C++/ObjC, Java, C#/.Net), annotation-reachability (C/C++/ObjC, Java)
+[246051][      debug] GC stats for capture:
+[246051][      debug]   minor_words: 7250
+[246051][      debug]   promoted_words: 0
+[246051][      debug]   major_words: 0
+[246051][      debug]   minor_collections: 0
+[246051][      debug]   major_collections: 0
+[246051][      debug]   compactions: 0
+[246051][      debug]   top_heap_words: 188416
+[246051][      debug]   
+[246051][      debug] GC stats for main_process_full:
+[246051][      debug]   minor_words: 1.45748e+06
+[246051][      debug]   promoted_words: 168693
+[246051][      debug]   major_words: 189345
+[246051][      debug]   minor_collections: 12
+[246051][      debug]   major_collections: 3
+[246051][      debug]   compactions: 1
+[246051][      debug]   top_heap_words: 188416
+[246051][      debug]   
+[246051][environment] Scheduler: file
+[246051][environment] Cores used: 12
+[246051][environment] [246023][      debug] GC stats for capture:
+[246023][      debug]   minor_words: 1559
+[246023][      debug]   promoted_words: 0
+[246023][      debug]   major_words: 0
+[246023][      debug]   minor_collections: 0
+[246023][      debug]   major_collections: 0
+[246023][      debug]   compactions: 0
+[246023][      debug]   top_heap_words: 875008
+[246023][      debug]   
+[246023][environment] Parallel jobs: 12
+[246023][   progress] Found 5 source files to analyze in /home/nathan/Desktop/DarkMatterClustering/test/infer-out
+[246056][   progress] main.c starting
+[246059][   progress] read_data_n.c starting
+[246057][   progress] list_combine.c starting
+[246060][   progress] periodic_separation.c starting
+[246058][   progress] read_data.c starting
+[246059][   progress] read_data_n.c DONE
+[246058][   progress] read_data.c DONE
+[246060][   progress] periodic_separation.c DONE
+[246057][   progress] list_combine.c DONE
+[246056][   progress] main.c DONE
+[246023][      debug] Backend stats:
+[246023][      debug]   summary_file_try_load= 400
+[246023][      debug]   summary_read_from_disk= 1
+[246023][      debug]   summary_cache_hits= 1291 (76%)
+[246023][      debug]   summary_cache_misses= 400
+[246023][      debug]   ondemand_procs_analyzed= 8
+[246023][      debug]   ondemand_local_cache_hits= 1367 (97%)
+[246023][      debug]   ondemand_local_cache_misses= 32
+[246023][      debug]   proc_locker_lock_time_user= 0.00000000
+[246023][      debug]   proc_locker_lock_time_sys= 0.00000000
+[246023][      debug]   proc_locker_lock_time_wall= 0.00000000
+[246023][      debug]   proc_locker_unlock_time_user= 0.00000000
+[246023][      debug]   proc_locker_unlock_time_sys= 0.00000000
+[246023][      debug]   proc_locker_unlock_time_wall= 0.00000000
+[246023][      debug]   restart_scheduler_useful_time_user= 0.00000000
+[246023][      debug]   restart_scheduler_useful_time_sys= 0.00000000
+[246023][      debug]   restart_scheduler_useful_time_wall= 0.00000000
+[246023][      debug]   restart_scheduler_total_time_user= 0.00000000
+[246023][      debug]   restart_scheduler_total_time_sys= 0.00000000
+[246023][      debug]   restart_scheduler_total_time_wall= 0.00000000
+[246023][      debug]   
+[246023][      debug] GC stats for backend_stats.gc_stats_add.:
+[246023][      debug]   minor_words: 4.84335e+08
+[246023][      debug]   promoted_words: 3.51293e+06
+[246023][      debug]   major_words: 3.7403e+06
+[246023][      debug]   minor_collections: 466
+[246023][      debug]   major_collections: 17
+[246023][      debug]   compactions: 0
+[246023][      debug]   top_heap_words: 11781632
+[246023][      debug]   
+[246023][      debug] GC stats for backend_stats.gc_stats_max.:
+[246023][      debug]   minor_words: 3.38653e+08
+[246023][      debug]   promoted_words: 2.57496e+06
+[246023][      debug]   major_words: 2.76194e+06
+[246023][      debug]   minor_collections: 326
+[246023][      debug]   major_collections: 8
+[246023][      debug]   compactions: 0
+[246023][      debug]   top_heap_words: 1761792
+[246023][      debug]   
+[246023][      debug] Average over 12 processes
+[246023][      debug] GC stats for backend_stats.gc_stats_average.:
+[246023][      debug]   minor_words: 4.03613e+07
+[246023][      debug]   promoted_words: 292744
+[246023][      debug]   major_words: 311692
+[246023][      debug]   minor_collections: 38
+[246023][      debug]   major_collections: 1
+[246023][      debug]   compactions: 0
+[246023][      debug]   top_heap_words: 981802
+[246023][      debug]   
+[246023][      debug] Analysis phase finished in 491ms
+[246023][      debug] backend_stats.scheduler_process_analysis_time_user= 0.00684200
+[246023][      debug] backend_stats.scheduler_process_analysis_time_sys= 0.00726000
+[246023][      debug] backend_stats.scheduler_process_analysis_time_wall= 0.49109478
+[246023][      debug] GC stats for analysis_scheduler:
+[246023][      debug]   minor_words: 743253
+[246023][      debug]   promoted_words: 1713
+[246023][      debug]   major_words: 10419
+[246023][      debug]   minor_collections: 1
+[246023][      debug]   major_collections: 2
+[246023][      debug]   compactions: 1
+[246023][      debug]   top_heap_words: 875008
+[246023][      debug]   
+[246023][      debug] GC stats for report:
+[246023][      debug]   minor_words: 142141
+[246023][      debug]   promoted_words: 0
+[246023][      debug]   major_words: 938
+[246023][      debug]   minor_collections: 0
+[246023][      debug]   major_collections: 0
+[246023][      debug]   compactions: 0
+[246023][      debug]   top_heap_words: 875008
+[246023][      debug]   
+[246023][      debug] GC stats for main_process_full:
+[246023][      debug]   minor_words: 2.60095e+06
+[246023][      debug]   promoted_words: 334717
+[246023][      debug]   major_words: 870402
+[246023][      debug]   minor_collections: 12
+[246023][      debug]   major_collections: 5
+[246023][      debug]   compactions: 2
+[246023][      debug]   top_heap_words: 875008
+[246023][      debug]   
+[246024][      debug] Sqlite write daemon: terminating

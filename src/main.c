@@ -55,6 +55,7 @@ int main(int argc, char *argv[]) {
 
     if(fp==NULL) {
         printf("Failed to open file.");
+        fclose(fp);
         return -1;
     };
 
@@ -71,7 +72,7 @@ int main(int argc, char *argv[]) {
     // closing files and freeing List
     if (List == NULL) {
         free(List);
-        printf("Error: ould not creat List. Exiting.");
+        printf("Error: could not create List. Exiting.");
         fclose(fp);
         return -2;
     }
@@ -237,11 +238,11 @@ int main(int argc, char *argv[]) {
         }
     }
     // on screen display of results of massive groups
-    printf("Found %d massive groups. Largest group was %g\n",massive_count,bigMass);
+    printf("Found %d massive groups.\nLargest group was %g\n",massive_count,bigMass);
     
 
     /* Open file and write data*/
-    char outfile[30] = "analysis.csv";
+    char outfile[30] = "analysis.dat";
     FILE *f = fopen(outfile, "w");
 
     // check if file ptr exists
@@ -259,16 +260,17 @@ int main(int argc, char *argv[]) {
     }
 
     // file header
-    fprintf(f,"Total_Mass, Gas_Mass, DM_Mass, Star_Mass, BH_Mass\n");
+    fprintf(f,"# Total_Mass, Gas_Mass, DM_Mass, Star_Mass, BH_Mass\n");
     
     // write results to file 
     for(i=0;i<count;i++) {
       if (Star[i]>=MassLimit) {
         // Write masses to file
-        fprintf(f,"%g, %g, %g, %g, %g\n",log10(Mass[i]),log10(Gas[i]),log10(DM[i]),log10(Star[i]),log10(BH[i]));
+        fprintf(f,"%g\t%g\t%g\t%g\t%g\n",log10(Mass[i]),log10(Gas[i]),log10(DM[i]),log10(Star[i]),log10(BH[i]));
         //printf("%d\n",i);
       }
     }
+    printf("Results saved to %s. Analysis Complete.\n",outfile);
     fclose(f);
 
     //clean up memory
