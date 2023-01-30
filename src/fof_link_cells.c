@@ -1,22 +1,21 @@
+
+
 int fof_link_cells(const uint32_t num_pos, const int N, const int M, const double b, const double *restrict xyz, const int64_t *restrict cell_ids, const int64_t *restrict sort_idx, int32_t *restrict domains) {
     /*
         Friends of Friends by binning into cells.
 
         num_pos  - The number of points
-        N        - Multiplicative factor such that cell(i,j,k) = M i + N j + k. 
-               Usually 3 mod 4 for maximum bitwise independence
+        N        - Multiplicative factor such that cell(i,j,k) = M i + N j + k. Usually 3 mod 4 for maximum bitwise independence
         M        - prime bigger than N^2
         b        - The linking length
         xyz      - (num_pos * 3) array of (unsorted) points
         cell_ids - The cell values for each point (s.t. i=x/cell_width etc.)
-        sort_idx - An index such that cell_ids[sort_idx] is ascending (ordered points
-               by cell)
+        sort_idx - An index such that cell_ids[sort_idx] is ascending (ordered points by cell)
         domains  - (num_pos,) integer output array for the domains
 
         Returns filled domains, integers s.t.  (same integer)=>connected
 
-        Implementation uses a hash-table and the disjoint sets algorithm to link
-        cells.
+        Implementation uses a hash-table and the disjoint sets algorithm to link cells.
     */
 
     unsigned int num_cells=0;
@@ -29,7 +28,7 @@ int fof_link_cells(const uint32_t num_pos, const int N, const int M, const doubl
         return 0;
     } // No points => no domains!
 
-  /* Count the number of cells */
+    /* Count the number of cells */
     for (int64_t i=1,last_id = cell_ids[sort_idx[num_cells++]];i<num_pos;++i) {
         if (cell_ids[sort_idx[i]]!=last_id) {
 	        num_cells++;
@@ -49,11 +48,6 @@ int fof_link_cells(const uint32_t num_pos, const int N, const int M, const doubl
         return -2; // Table too big
     }
             
-    
-        
-
-    
-
     const int64_t hsize = TAB_START<<tab_size;
     const unsigned int hprime = HASH_PRIMES[tab_size],
     hmask = hsize-1;
@@ -61,13 +55,13 @@ int fof_link_cells(const uint32_t num_pos, const int N, const int M, const doubl
     const unsigned int hash_ngb[WALK_NGB_SIZE] = HASH_NGB(walk_ngbs, hprime, hmask);
     
     #ifdef DEBUG
-    float actual_load = (float)num_cells / hsize, expected_collisions= (-1.0 - log(1-actual_load)/actual_load);
-    printf("Number of cells %d, %.2f%% of number of positions (%u)\n", num_cells, num_cells*100.0/num_pos, (unsigned int)num_pos);
-    printf("Table size 1024<<%d, prime %u\n", tab_size, hprime);
-    printf("Desired load %.1f%%\nActual load %.1f%%\n", 100.0*DESIRED_LOAD, 100.0*actual_load);
+        float actual_load = (float)num_cells / hsize, expected_collisions= (-1.0 - log(1-actual_load)/actual_load);
+        printf("Number of cells %d, %.2f%% of number of positions (%u)\n", num_cells, num_cells*100.0/num_pos, (unsigned int)num_pos);
+        printf("Table size 1024<<%d, prime %u\n", tab_size, hprime);
+        printf("Desired load %.1f%%\nActual load %.1f%%\n", 100.0*DESIRED_LOAD, 100.0*actual_load);
 
-    printf("Platform int size %d\nHash cell size %d bytes\n", (int)sizeof(int), (int)sizeof(HashCell));
-    max_stack_usage = search_collisions = ngb_found = fill_collisions = pt_cmp = 0; 
+        printf("Platform int size %d\nHash cell size %d bytes\n", (int)sizeof(int), (int)sizeof(HashCell));
+        max_stack_usage = search_collisions = ngb_found = fill_collisions = pt_cmp = 0; 
     #endif
 
     // Hashtable of indices

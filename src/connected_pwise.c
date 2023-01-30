@@ -24,8 +24,9 @@ static int connected_pwise( const int cur_size,
             #ifdef DEBUG		      
 	            pt_cmp++; // Count comparisons
             #endif
-	        if ((dx*dx + dy*dy + dz*dz) > b2)
-	            continue;
+	        if ((dx*dx + dy*dy + dz*dz) > b2) {
+                continue;
+            }
             return 1;
 	    }
     }
