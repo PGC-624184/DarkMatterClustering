@@ -1,4 +1,4 @@
 #!/bin/bash
-./Friend_of_Friends ~/Desktop/University/cosmo.txt
+./Friend_of_Friends ~/Desktop/Uni/Assignment4/data/cosmo.txt
 
-gnuplot -persist Plotting.p
+#gnuplot -persist Plotting.p
